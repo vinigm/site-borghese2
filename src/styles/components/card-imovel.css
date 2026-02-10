@@ -1,31 +1,3 @@
-/* === SETAS DO CARROSSEL === */
-.card-imovel__seta {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background: rgba(0,0,0,0.4);
-  color: #fff;
-  border: none;
-  border-radius: 50%;
-  width: 36px;
-  height: 36px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.5rem;
-  cursor: pointer;
-  z-index: 2;
-  transition: background 0.2s;
-}
-.card-imovel__seta:hover {
-  background: rgba(0,0,0,0.7);
-}
-.card-imovel__seta--esq {
-  left: 10px;
-}
-.card-imovel__seta--dir {
-  right: 10px;
-}
 /* ========================================
    CARD DE IMÓVEL - Componente para exibir imóveis
    ======================================== */

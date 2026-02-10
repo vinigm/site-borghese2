@@ -17,17 +17,18 @@ class RenderizadorImoveis {
     const precoFormatado = formatarMoeda(imovel.preco);
     const periodo = imovel.transacao === 'aluguel' ? '/mês' : '';
     const enderecoFormatado = formatarEnderecoCurto(imovel.endereco);
+    
     const badges = [];
     if (imovel.destaque) {
       badges.push('<span class="card-imovel__badge card-imovel__badge--destaque">⭐ Destaque</span>');
     }
     badges.push(`<span class="card-imovel__badge card-imovel__badge--tipo">${this.capitalizarTipo(imovel.tipo)}</span>`);
     badges.push(`<span class="card-imovel__badge card-imovel__badge--transacao">${this.capitalizarTransacao(imovel.transacao)}</span>`);
+
+    // Mensagem padrão do WhatsApp
     const mensagemWhatsApp = `Olá! Tenho interesse no imóvel: ${imovel.titulo} - ${precoFormatado}`;
     const linkWhatsApp = gerarLinkWhatsApp('51993016930', mensagemWhatsApp);
 
-    // Carrossel de imagens
-    const temVariasImagens = imovel.imagens && imovel.imagens.length > 1;
     return `
       <article class="card-imovel" data-imovel-id="${imovel.id}">
         <div class="card-imovel__imagem-container">
@@ -36,13 +37,7 @@ class RenderizadorImoveis {
             alt="${imovel.titulo}"
             class="card-imovel__imagem"
             loading="lazy"
-            data-imovel-id="${imovel.id}"
-            data-imagem-index="0"
           />
-          ${temVariasImagens ? `
-            <button class="card-imovel__seta card-imovel__seta--esq" data-imovel-id="${imovel.id}" data-direcao="esq" title="Imagem anterior">&#8592;</button>
-            <button class="card-imovel__seta card-imovel__seta--dir" data-imovel-id="${imovel.id}" data-direcao="dir" title="Próxima imagem">&#8594;</button>
-          ` : ''}
           <div class="card-imovel__badges">
             ${badges.join('')}
           </div>
@@ -90,27 +85,6 @@ class RenderizadorImoveis {
         </div>
       </article>
     `;
-    // Adiciona listeners para o carrossel após renderizar a lista
-    adicionarEventListenersCarrossel(container, imoveis) {
-      const botoesSeta = container.querySelectorAll('.card-imovel__seta');
-      botoesSeta.forEach(botao => {
-        botao.addEventListener('click', (e) => {
-          const imovelId = botao.getAttribute('data-imovel-id');
-          const direcao = botao.getAttribute('data-direcao');
-          const imovel = imoveis.find(i => String(i.id) === String(imovelId));
-          if (!imovel) return;
-          const img = container.querySelector(`.card-imovel__imagem[data-imovel-id="${imovelId}"]`);
-          let idx = parseInt(img.getAttribute('data-imagem-index'));
-          if (direcao === 'dir') {
-            idx = (idx + 1) % imovel.imagens.length;
-          } else {
-            idx = (idx - 1 + imovel.imagens.length) % imovel.imagens.length;
-          }
-          img.src = imovel.imagens[idx];
-          img.setAttribute('data-imagem-index', idx);
-        });
-      });
-    }
   }
 
   /**
@@ -162,10 +136,9 @@ class RenderizadorImoveis {
 
     const html = imoveis.map(imovel => this.renderizarCard(imovel)).join('');
     container.innerHTML = html;
+
     // Adiciona event listeners para favoritos
     this.adicionarEventListenersFavoritos(container);
-    // Adiciona event listeners para o carrossel
-    this.adicionarEventListenersCarrossel(container, imoveis);
   }
 
   /**
