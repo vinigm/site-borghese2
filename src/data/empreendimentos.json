@@ -37,10 +37,18 @@
         "Infraestrutura completa"
       ],
       "imagens": [
-        "assets/images/empreendimentos/condominio-tom/fachada.jpg",
-        "assets/images/empreendimentos/condominio-tom/academia.jpg",
-        "assets/images/empreendimentos/condominio-tom/piscina.jpg",
-        "assets/images/empreendimentos/condominio-tom/salao.jpg"
+        "assets/images/empreendimentos/condominio-tom/1.jpg",
+        "assets/images/empreendimentos/condominio-tom/05.jpg",
+        "assets/images/empreendimentos/condominio-tom/07.jpg",
+        "assets/images/empreendimentos/condominio-tom/09.jpg",
+        "assets/images/empreendimentos/condominio-tom/11.jpg",
+        "assets/images/empreendimentos/condominio-tom/13.jpg",
+        "assets/images/empreendimentos/condominio-tom/15.jpg",
+        "assets/images/empreendimentos/condominio-tom/20.jpg",
+        "assets/images/empreendimentos/condominio-tom/academia1.jpeg",
+        "assets/images/empreendimentos/condominio-tom/academia2.jpeg",
+        "assets/images/empreendimentos/condominio-tom/piscina1.jpeg",
+        "assets/images/empreendimentos/condominio-tom/piscina2.jpeg"
       ],
       "destaque": true,
       "disponivel": true,
