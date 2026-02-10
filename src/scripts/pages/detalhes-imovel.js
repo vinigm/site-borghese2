@@ -187,7 +187,7 @@ async function carregarDetalhes() {
 
     const precoFormatado = formatarMoeda(imovel.preco);
     const enderecoFormatado = formatarEndereco(imovel.endereco);
-    const mensagemWhatsApp = `Ola! Tenho interesse no imovel: ${imovel.titulo} - ${precoFormatado}`;
+    const mensagemWhatsApp = `Olá! Vi o imovel ${imovel.titulo} no valor de ${precoFormatado} e achei interessante! Podemos conversar?`;
     const linkWhatsApp = gerarLinkWhatsApp('51993016930', mensagemWhatsApp);
 
     container.innerHTML = `

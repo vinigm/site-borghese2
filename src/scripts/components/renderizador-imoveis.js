@@ -34,7 +34,7 @@ class RenderizadorImoveis {
     badges.push(`<span class="card-imovel__badge card-imovel__badge--transacao">${this.capitalizarTransacao(imovel.transacao)}</span>`);
 
     // Mensagem padrão do WhatsApp
-    const mensagemWhatsApp = `Olá! Tenho interesse no imóvel: ${imovel.titulo} - ${precoFormatado}`;
+    const mensagemWhatsApp = `Olá! Vi o imovel ${imovel.titulo} no valor de ${precoFormatado} e achei interessante! Podemos conversar?`;
     const linkWhatsApp = gerarLinkWhatsApp('51993016930', mensagemWhatsApp);
     const detalhesBase = window.location.pathname.includes('/pages/')
       ? 'detalhes-imovel.html'
