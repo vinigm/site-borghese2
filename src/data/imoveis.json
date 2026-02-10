@@ -19,14 +19,18 @@
         "area": 95
       },
       "descricao": "Apartamento moderno com acabamento de primeira qualidade, localizado no coração da cidade. Próximo a comércios, restaurantes e transporte público.",
-      "imagens": [
-        "assets/images/imoveis/apto1-sala.jpg",
-        "assets/images/imoveis/apto1-quarto.jpg",
-        "assets/images/imoveis/apto1-cozinha.jpg"
-      ],
+        "imagens": [
+          "assets/images/imoveis/1/academia1.jpeg",
+          "assets/images/imoveis/1/academia2.jpeg",
+          "assets/images/imoveis/1/piscina1.jpeg",
+          "assets/images/imoveis/1/piscina2.jpeg"
+        ],
       "destaque": true,
       "disponivel": true
     },
+
+
+
     {
       "id": 2,
       "titulo": "Casa Espaçosa com Quintal",
@@ -47,13 +51,17 @@
       },
       "descricao": "Linda casa em condomínio fechado, com amplo quintal, churrasqueira e piscina. Perfeita para famílias que buscam conforto e segurança.",
       "imagens": [
-        "assets/images/imoveis/casa1-frente.jpg",
-        "assets/images/imoveis/casa1-quintal.jpg",
-        "assets/images/imoveis/casa1-piscina.jpg"
+        "assets/images/imoveis/2/frente.jpg",
+        "assets/images/imoveis/2/quintal.jpg",
+        "assets/images/imoveis/2/piscina.jpg"
       ],
       "destaque": true,
       "disponivel": true
     },
+
+
+
+
     {
       "id": 3,
       "titulo": "Studio Compacto para Estudantes",
@@ -74,8 +82,8 @@
       },
       "descricao": "Studio perfeito para estudantes ou profissionais solteiros. Totalmente mobiliado, com internet inclusa. Próximo ao metrô e universidades.",
       "imagens": [
-        "assets/images/imoveis/studio1-geral.jpg",
-        "assets/images/imoveis/studio1-cozinha.jpg"
+        "assets/images/imoveis/3/geral.jpg",
+        "assets/images/imoveis/3/cozinha.jpg"
       ],
       "destaque": false,
       "disponivel": true
@@ -100,9 +108,9 @@
       },
       "descricao": "Cobertura de alto padrão com vista deslumbrante da cidade. Terraço gourmet, piscina privativa e acabamento premium. Lazer completo no condomínio.",
       "imagens": [
-        "assets/images/imoveis/cobertura1-terraco.jpg",
-        "assets/images/imoveis/cobertura1-sala.jpg",
-        "assets/images/imoveis/cobertura1-vista.jpg"
+        "assets/images/imoveis/4/terraco.jpg",
+        "assets/images/imoveis/4/sala.jpg",
+        "assets/images/imoveis/4/vista.jpg"
       ],
       "destaque": true,
       "disponivel": true
@@ -127,8 +135,8 @@
       },
       "descricao": "Apartamento bem localizado, próximo a transporte público e comércio. Prédio com portaria 24h e área de lazer.",
       "imagens": [
-        "assets/images/imoveis/apto2-sala.jpg",
-        "assets/images/imoveis/apto2-quarto.jpg"
+        "assets/images/imoveis/5/sala.jpg",
+        "assets/images/imoveis/5/quarto.jpg"
       ],
       "destaque": false,
       "disponivel": true
@@ -153,8 +161,8 @@
       },
       "descricao": "Casa em excelente estado, com jardim e garagem coberta. Bairro tranquilo e familiar, com ótima infraestrutura.",
       "imagens": [
-        "assets/images/imoveis/casa2-frente.jpg",
-        "assets/images/imoveis/casa2-jardim.jpg"
+        "assets/images/imoveis/6/frente.jpg",
+        "assets/images/imoveis/6/jardim.jpg"
       ],
       "destaque": false,
       "disponivel": true
