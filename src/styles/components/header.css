@@ -40,9 +40,10 @@
   opacity: 0.8;
 }
 
-.header__logo-icone {
-  width: 32px;
-  height: 32px;
+.header__logo-img {
+  height: 50px;
+  width: auto;
+  object-fit: contain;
 }
 
 /* === NAVEGAÇÃO === */
