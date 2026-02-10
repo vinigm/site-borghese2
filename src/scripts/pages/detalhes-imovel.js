@@ -82,7 +82,7 @@ function renderizarErro(titulo, mensagem) {
     <div class="detalhes-imovel__erro">
       <h2>${titulo}</h2>
       <p>${mensagem}</p>
-      <a href="imoveis.html" class="botao botao--primario">Voltar para Imoveis</a>
+      <a href="imoveis.html?reset=1" class="botao botao--primario">Voltar para Imoveis</a>
     </div>
   `;
 }
@@ -215,7 +215,7 @@ async function carregarDetalhes() {
 
           <div class="detalhes-imovel__acoes">
             <a href="${linkWhatsApp}" target="_blank" rel="noopener" class="botao botao--whatsapp">WhatsApp</a>
-            <a href="imoveis.html" class="botao botao--outline">Voltar para Imoveis</a>
+            <a href="imoveis.html?reset=1" class="botao botao--outline">Voltar para Imoveis</a>
           </div>
         </div>
       </div>

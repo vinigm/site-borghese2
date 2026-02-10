@@ -336,11 +336,18 @@
   <script type="module">
     import sistemaFiltros from '../src/scripts/components/sistema-filtros.js';
 
+    const urlParams = new URLSearchParams(window.location.search);
+    const resetFiltros = urlParams.get('reset');
+    if (resetFiltros === '1') {
+      localStorage.removeItem('filtrosImoveis');
+      const formReset = document.getElementById('form-filtros');
+      if (formReset) formReset.reset();
+    }
+
     // Inicializa sistema de filtros
     sistemaFiltros.inicializar('#form-filtros', '#lista-imoveis');
 
     // Pega parâmetros da URL
-    const urlParams = new URLSearchParams(window.location.search);
     const tipo = urlParams.get('tipo');
     const transacao = urlParams.get('transacao');
     const busca = urlParams.get('busca');
