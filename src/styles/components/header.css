@@ -18,7 +18,7 @@
 .header__container {
   max-width: var(--largura-maxima-conteudo);
   margin: 0 auto;
-  padding: var(--espacamento-md) var(--espacamento-lg);
+  padding: var(--espacamento-lg) var(--espacamento-lg);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -41,7 +41,7 @@
 }
 
 .header__logo-img {
-  height: 50px;
+  height: 64px;
   width: auto;
   object-fit: contain;
 }
@@ -135,7 +135,11 @@
 /* === RESPONSIVIDADE === */
 @media (max-width: 768px) {
   .header__container {
-    padding: var(--espacamento-md);
+    padding: var(--espacamento-md) var(--espacamento-lg);
+  }
+
+  .header__logo-img {
+    height: 52px;
   }
 
   .header__menu-toggle {
