@@ -125,7 +125,9 @@ class RenderizadorImoveis {
    * @param {string} containerSelector - Seletor do container
    */
   renderizarLista(imoveis, containerSelector) {
-    const container = document.querySelector(containerSelector);
+    const container = typeof containerSelector === 'string'
+      ? document.querySelector(containerSelector)
+      : containerSelector;
     
     if (!container) {
       console.error(`Container não encontrado: ${containerSelector}`);
@@ -169,7 +171,9 @@ class RenderizadorImoveis {
    * @param {string} containerSelector - Seletor do container
    */
   renderizarCarregando(containerSelector) {
-    const container = document.querySelector(containerSelector);
+    const container = typeof containerSelector === 'string'
+      ? document.querySelector(containerSelector)
+      : containerSelector;
     if (!container) return;
 
     container.innerHTML = `
