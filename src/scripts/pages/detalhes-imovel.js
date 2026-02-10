@@ -46,7 +46,16 @@ function configurarGaleria(imagens, titulo) {
 
   if (!imagemPrincipal || !miniaturas) return;
 
-  const lista = imagens.length ? imagens : ['assets/images/placeholder.jpg'];
+  const resolverCaminhoImagem = (src) => {
+    if (src.startsWith('http') || src.startsWith('/') || src.startsWith('../') || src.startsWith('./')) {
+      return src;
+    }
+    const estaEmPages = window.location.pathname.includes('/pages/');
+    return estaEmPages ? `../${src}` : src;
+  };
+
+  const listaOriginal = imagens.length ? imagens : ['assets/images/placeholder.jpg'];
+  const lista = listaOriginal.map(resolverCaminhoImagem);
   imagemPrincipal.src = lista[0];
   imagemPrincipal.alt = titulo;
 
