@@ -82,6 +82,20 @@
   padding-right: var(--espacamento-xs);
 }
 
+@media (max-width: 768px) {
+  .empreendimento__galeria {
+    position: static;
+  }
+
+  .empreendimento__imagem-principal {
+    height: 320px;
+  }
+
+  .empreendimento__miniaturas {
+    max-height: 220px;
+  }
+}
+
 /* Scrollbar customizada */
 .empreendimento__miniaturas::-webkit-scrollbar {
   width: 8px;
