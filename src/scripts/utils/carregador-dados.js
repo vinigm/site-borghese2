@@ -11,6 +11,16 @@ class CarregadorDados {
     this.cacheTimeout = 5 * 60 * 1000; // 5 minutos
   }
 
+  resolverCaminhos(caminho) {
+    if (caminho.startsWith('http') || caminho.startsWith('/') || caminho.startsWith('../') || caminho.startsWith('./')) {
+      return [caminho];
+    }
+
+    const estaEmPages = window.location.pathname.includes('/pages/');
+    const caminhos = estaEmPages ? [`../${caminho}`, caminho] : [caminho, `./${caminho}`];
+    return [...new Set(caminhos)];
+  }
+
   /**
    * Carrega dados de um arquivo JSON
    * @param {string} caminho - Caminho do arquivo JSON
@@ -18,44 +28,50 @@ class CarregadorDados {
    * @returns {Promise<Object>} - Dados carregados
    */
   async carregarJSON(caminho, usarCache = true) {
-    // Verifica cache
-    if (usarCache && this.cache.has(caminho)) {
-      const dadosCache = this.cache.get(caminho);
-      const agora = Date.now();
-      
-      if (agora - dadosCache.timestamp < this.cacheTimeout) {
-        console.log(`📦 Dados carregados do cache: ${caminho}`);
-        return dadosCache.data;
-      } else {
-        this.cache.delete(caminho);
+    const caminhos = this.resolverCaminhos(caminho);
+    let ultimoErro = null;
+
+    for (const caminhoAtual of caminhos) {
+      // Verifica cache
+      if (usarCache && this.cache.has(caminhoAtual)) {
+        const dadosCache = this.cache.get(caminhoAtual);
+        const agora = Date.now();
+
+        if (agora - dadosCache.timestamp < this.cacheTimeout) {
+          console.log(`📦 Dados carregados do cache: ${caminhoAtual}`);
+          return dadosCache.data;
+        } else {
+          this.cache.delete(caminhoAtual);
+        }
+      }
+
+      try {
+        console.log(`🔄 Carregando dados: ${caminhoAtual}`);
+        const resposta = await fetch(caminhoAtual);
+
+        if (!resposta.ok) {
+          throw new Error(`Erro HTTP: ${resposta.status}`);
+        }
+
+        const dados = await resposta.json();
+
+        // Armazena no cache
+        if (usarCache) {
+          this.cache.set(caminhoAtual, {
+            data: dados,
+            timestamp: Date.now()
+          });
+        }
+
+        console.log(`✅ Dados carregados com sucesso: ${caminhoAtual}`);
+        return dados;
+      } catch (erro) {
+        ultimoErro = erro;
       }
     }
 
-    try {
-      console.log(`🔄 Carregando dados: ${caminho}`);
-      const resposta = await fetch(caminho);
-      
-      if (!resposta.ok) {
-        throw new Error(`Erro HTTP: ${resposta.status}`);
-      }
-
-      const dados = await resposta.json();
-
-      // Armazena no cache
-      if (usarCache) {
-        this.cache.set(caminho, {
-          data: dados,
-          timestamp: Date.now()
-        });
-      }
-
-      console.log(`✅ Dados carregados com sucesso: ${caminho}`);
-      return dados;
-
-    } catch (erro) {
-      console.error(`❌ Erro ao carregar dados: ${caminho}`, erro);
-      throw erro;
-    }
+    console.error(`❌ Erro ao carregar dados: ${caminho}`, ultimoErro);
+    throw ultimoErro;
   }
 
   /**

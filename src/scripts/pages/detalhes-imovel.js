@@ -134,6 +134,10 @@ async function carregarDetalhes() {
     configurarGaleria(imovel.imagens || [], imovel.titulo);
   } catch (erro) {
     console.error('Erro ao carregar detalhes do imovel:', erro);
+    if (window.location.protocol === 'file:') {
+      renderizarErro('Erro ao carregar', 'Abra o site usando um servidor local (ex: Live Server) para carregar os dados.');
+      return;
+    }
     renderizarErro('Erro ao carregar', 'Ocorreu um erro ao carregar o imovel.');
   }
 }
