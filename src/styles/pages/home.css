@@ -188,7 +188,7 @@
 
 /* === CTA SECTION === */
 .cta-section {
-  background: linear-gradient(135deg, var(--cor-secundaria) 0%, var(--cor-secundaria-escura) 100%);
+  background: linear-gradient(135deg, #1e40af 0%, #1e3a8a 100%);
   padding: var(--espacamento-3xl) var(--espacamento-lg);
   color: var(--cor-fundo);
   text-align: center;
