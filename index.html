@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Encontre o imóvel dos seus sonhos. Apartamentos e casas para venda e aluguel com as melhores condições.">
+  <meta name="keywords" content="imobiliária, imóveis, apartamentos, casas, venda, aluguel">
+  <title>ImóvelPerfeito - Encontre seu lar ideal</title>
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏠</text></svg>">
+  
+  <!-- CSS -->
+  <link rel="stylesheet" href="src/styles/main.css">
+</head>
+<body>
+  <!-- HEADER -->
+  <header class="header">
+    <div class="header__container">
+      <a href="index.html" class="header__logo">
+        <span class="header__logo-icone">🏠</span>
+        <span>ImóvelPerfeito</span>
+      </a>
+
+      <nav class="header__nav">
+        <ul class="nav__lista">
+          <li class="nav__item">
+            <a href="index.html" class="nav__link ativo">Início</a>
+          </li>
+          <li class="nav__item">
+            <a href="pages/imoveis.html" class="nav__link">Imóveis</a>
+          </li>
+          <li class="nav__item">
+            <a href="pages/sobre.html" class="nav__link">Sobre</a>
+          </li>
+          <li class="nav__item">
+            <a href="pages/contato.html" class="nav__link">Contato</a>
+          </li>
+        </ul>
+      </nav>
+
+      <div class="header__cta oculto-mobile">
+        <a href="pages/contato.html" class="botao botao--primario">
+          Fale Conosco
+        </a>
+      </div>
+
+      <button class="header__menu-toggle" aria-label="Menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- HERO SECTION -->
+  <section class="hero">
+    <div class="hero__container">
+      <h1 class="hero__titulo">Encontre o Imóvel dos Seus Sonhos</h1>
+      <p class="hero__subtitulo">
+        A melhor seleção de imóveis para você morar ou investir.
+        Apartamentos, casas e terrenos nas melhores localizações.
+      </p>
+
+      <div class="hero__busca">
+        <input 
+          type="text" 
+          class="hero__busca-input" 
+          placeholder="Busque por bairro, cidade ou tipo de imóvel..."
+          id="busca-rapida"
+        />
+        <button class="botao botao--primario hero__busca-botao" id="btn-busca-rapida">
+          🔍 Buscar
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- DESTAQUES -->
+  <section class="destaques">
+    <div class="destaques__container">
+      <div class="secao__header">
+        <h2 class="secao__titulo">Imóveis em Destaque</h2>
+        <p class="secao__subtitulo">
+          Confira nossa seleção especial de imóveis
+        </p>
+      </div>
+
+      <div class="grid-imoveis" id="destaques-container">
+        <!-- Imóveis serão carregados via JavaScript -->
+        <div class="loading-container">
+          <div class="loading-spinner loading-spinner--large"></div>
+        </div>
+      </div>
+
+      <div style="text-align: center; margin-top: 2rem;">
+        <a href="pages/imoveis.html" class="botao botao--outline botao--grande">
+          Ver Todos os Imóveis →
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CATEGORIAS -->
+  <section class="categorias">
+    <div class="categorias__container">
+      <div class="secao__header">
+        <h2 class="secao__titulo">O Que Você Procura?</h2>
+        <p class="secao__subtitulo">
+          Selecione a categoria que você deseja
+        </p>
+      </div>
+
+      <div class="categorias__grid">
+        <div class="categoria-card" onclick="window.location.href='pages/imoveis.html?tipo=apartamento'">
+          <div class="categoria-card__icone">🏢</div>
+          <h3 class="categoria-card__titulo">Apartamentos</h3>
+          <p class="categoria-card__quantidade">Diversos apartamentos disponíveis</p>
+        </div>
+
+        <div class="categoria-card" onclick="window.location.href='pages/imoveis.html?tipo=casa'">
+          <div class="categoria-card__icone">🏡</div>
+          <h3 class="categoria-card__titulo">Casas</h3>
+          <p class="categoria-card__quantidade">Casas aconchegantes para sua família</p>
+        </div>
+
+        <div class="categoria-card" onclick="window.location.href='pages/imoveis.html?transacao=venda'">
+          <div class="categoria-card__icone">💰</div>
+          <h3 class="categoria-card__titulo">Comprar</h3>
+          <p class="categoria-card__quantidade">Imóveis para compra</p>
+        </div>
+
+        <div class="categoria-card" onclick="window.location.href='pages/imoveis.html?transacao=aluguel'">
+          <div class="categoria-card__icone">🔑</div>
+          <h3 class="categoria-card__titulo">Alugar</h3>
+          <p class="categoria-card__quantidade">Imóveis para locação</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA SECTION -->
+  <section class="cta-section">
+    <div class="cta-section__container">
+      <h2 class="cta-section__titulo">Tem um Imóvel para Vender ou Alugar?</h2>
+      <p class="cta-section__texto">
+        Entre em contato conosco e descubra como podemos ajudar você a 
+        encontrar o comprador ou inquilino perfeito para seu imóvel.
+      </p>
+      <div class="cta-section__botoes">
+        <a href="pages/contato.html" class="botao botao--primario botao--grande">
+          Fale Conosco
+        </a>
+        <a href="https://wa.me/5511999999999" target="_blank" rel="noopener" class="botao botao--whatsapp botao--grande">
+          WhatsApp
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer__container">
+      <div class="footer__conteudo">
+        <!-- Sobre -->
+        <div class="footer__secao footer__sobre">
+          <h3 class="footer__logo">🏠 ImóvelPerfeito</h3>
+          <p>
+            A ImóvelPerfeito é sua parceira ideal na busca pelo imóvel dos sonhos.
+            Trabalhamos com transparência, agilidade e dedicação para realizar seu objetivo.
+          </p>
+          <div class="footer__redes-sociais">
+            <a href="#" class="footer__rede-social" aria-label="Facebook">📘</a>
+            <a href="#" class="footer__rede-social" aria-label="Instagram">📷</a>
+            <a href="#" class="footer__rede-social" aria-label="LinkedIn">💼</a>
+            <a href="#" class="footer__rede-social" aria-label="YouTube">▶️</a>
+          </div>
+        </div>
+
+        <!-- Links Rápidos -->
+        <div class="footer__secao">
+          <h3>Links Rápidos</h3>
+          <nav class="footer__links-lista">
+            <a href="index.html">→ Início</a>
+            <a href="pages/imoveis.html">→ Imóveis</a>
+            <a href="pages/sobre.html">→ Sobre Nós</a>
+            <a href="pages/contato.html">→ Contato</a>
+          </nav>
+        </div>
+
+        <!-- Contato -->
+        <div class="footer__secao">
+          <h3>Contato</h3>
+          <div class="footer__contato-item">
+            <span>📍</span>
+            <div>
+              <strong>Endereço</strong>
+              <p>Av. Paulista, 1000 - São Paulo/SP</p>
+            </div>
+          </div>
+          <div class="footer__contato-item">
+            <span>📞</span>
+            <div>
+              <strong>Telefone</strong>
+              <p><a href="tel:+551134567890">(11) 3456-7890</a></p>
+            </div>
+          </div>
+          <div class="footer__contato-item">
+            <span>📧</span>
+            <div>
+              <strong>Email</strong>
+              <p><a href="mailto:contato@imovelperfeito.com.br">contato@imovelperfeito.com.br</a></p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Newsletter -->
+        <div class="footer__secao">
+          <h3>Newsletter</h3>
+          <p>Receba novidades e lançamentos diretamente no seu email.</p>
+          <form class="footer__newsletter-form" onsubmit="event.preventDefault(); alert('Newsletter em breve!');">
+            <input 
+              type="email" 
+              class="footer__newsletter-input" 
+              placeholder="Seu email"
+              required
+            />
+            <button type="submit" class="footer__newsletter-button">Enviar</button>
+          </form>
+        </div>
+      </div>
+
+      <!-- Bottom -->
+      <div class="footer__bottom">
+        <div class="footer__copyright">
+          © 2026 ImóvelPerfeito. Todos os direitos reservados.
+        </div>
+        <nav class="footer__bottom-links">
+          <a href="#">Política de Privacidade</a>
+          <a href="#">Termos de Uso</a>
+        </nav>
+      </div>
+    </div>
+  </footer>
+
+  <!-- JavaScript -->
+  <script type="module">
+    import carregadorDados from './src/scripts/utils/carregador-dados.js';
+    import renderizadorImoveis from './src/scripts/components/renderizador-imoveis.js';
+
+    // Carrega imóveis em destaque
+    async function carregarDestaques() {
+      try {
+        const imoveis = await carregadorDados.carregarImoveisDestaque();
+        const container = document.getElementById('destaques-container');
+        
+        // Limita a 3 imóveis
+        const imoveisLimitados = imoveis.slice(0, 3);
+        renderizadorImoveis.renderizarLista(imoveisLimitados, '#destaques-container');
+      } catch (erro) {
+        console.error('Erro ao carregar destaques:', erro);
+      }
+    }
+
+    // Busca rápida
+    document.getElementById('btn-busca-rapida').addEventListener('click', () => {
+      const busca = document.getElementById('busca-rapida').value;
+      window.location.href = `pages/imoveis.html?busca=${encodeURIComponent(busca)}`;
+    });
+
+    document.getElementById('busca-rapida').addEventListener('keypress', (e) => {
+      if (e.key === 'Enter') {
+        document.getElementById('btn-busca-rapida').click();
+      }
+    });
+
+    // Inicializa
+    carregarDestaques();
+  </script>
+  <script type="module" src="src/scripts/main.js"></script>
+</body>
+</html>

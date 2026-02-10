@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Encontre o imóvel dos seus sonhos. Apartamentos e casas para venda e aluguel com as melhores condições.">
+  <title>ImóvelPerfeito - Entre em Contato</title>
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏠</text></svg>">
+  
+  <!-- CSS -->
+  <link rel="stylesheet" href="../src/styles/main.css">
+</head>
+<body class="pagina-contato">
+  <!-- HEADER -->
+  <header class="header">
+    <div class="header__container">
+      <a href="../index.html" class="header__logo">
+        <span class="header__logo-icone">🏠</span>
+        <span>ImóvelPerfeito</span>
+      </a>
+
+      <nav class="header__nav">
+        <ul class="nav__lista">
+          <li class="nav__item">
+            <a href="../index.html" class="nav__link">Início</a>
+          </li>
+          <li class="nav__item">
+            <a href="imoveis.html" class="nav__link">Imóveis</a>
+          </li>
+          <li class="nav__item">
+            <a href="sobre.html" class="nav__link">Sobre</a>
+          </li>
+          <li class="nav__item">
+            <a href="contato.html" class="nav__link ativo">Contato</a>
+          </li>
+        </ul>
+      </nav>
+
+      <div class="header__cta oculto-mobile">
+        <a href="contato.html" class="botao botao--primario">
+          Fale Conosco
+        </a>
+      </div>
+
+      <button class="header__menu-toggle" aria-label="Menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- BANNER -->
+  <section class="banner-pagina">
+    <div class="banner-pagina__container">
+      <h1 class="banner-pagina__titulo">Entre em Contato</h1>
+      <nav class="banner-pagina__breadcrumb">
+        <a href="../index.html">Início</a>
+        <span class="banner-pagina__breadcrumb-separador">→</span>
+        <span>Contato</span>
+      </nav>
+    </div>
+  </section>
+
+  <!-- CONTATO -->
+  <section class="contato-container">
+    <div class="contato-grid">
+      <!-- Informações de Contato -->
+      <div class="contato-info">
+        <h2 class="contato-info__titulo">Fale Conosco</h2>
+        <p class="contato-info__descricao">
+          Estamos à disposição para ajudá-lo a encontrar o imóvel perfeito.
+          Entre em contato pelos canais abaixo ou preencha o formulário.
+        </p>
+
+        <div class="contato-info__lista">
+          <div class="contato-info__item">
+            <div class="contato-info__icone">📍</div>
+            <div class="contato-info__conteudo">
+              <h4>Endereço</h4>
+              <p>Av. Paulista, 1000 - Sala 1201<br>Bela Vista, São Paulo/SP<br>CEP: 01310-100</p>
+            </div>
+          </div>
+
+          <div class="contato-info__item">
+            <div class="contato-info__icone">📞</div>
+            <div class="contato-info__conteudo">
+              <h4>Telefones</h4>
+              <p>
+                <a href="tel:+551134567890">(11) 3456-7890</a><br>
+                <a href="tel:+5511999999999">(11) 99999-9999</a>
+              </p>
+            </div>
+          </div>
+
+          <div class="contato-info__item">
+            <div class="contato-info__icone">📧</div>
+            <div class="contato-info__conteudo">
+              <h4>Email</h4>
+              <p>
+                <a href="mailto:contato@imovelperfeito.com.br">contato@imovelperfeito.com.br</a><br>
+                <a href="mailto:vendas@imovelperfeito.com.br">vendas@imovelperfeito.com.br</a>
+              </p>
+            </div>
+          </div>
+
+          <div class="contato-info__item">
+            <div class="contato-info__icone">💬</div>
+            <div class="contato-info__conteudo">
+              <h4>WhatsApp</h4>
+              <p>
+                <a href="https://wa.me/5511999999999" target="_blank" rel="noopener">
+                  (11) 99999-9999
+                </a>
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Horário de Funcionamento -->
+        <div class="horario-funcionamento">
+          <h5>⏰ Horário de Atendimento</h5>
+          <div class="horario-funcionamento__lista">
+            <div class="horario-funcionamento__item">
+              <span class="horario-funcionamento__dia">Segunda a Sexta</span>
+              <span class="horario-funcionamento__hora">8h às 18h</span>
+            </div>
+            <div class="horario-funcionamento__item">
+              <span class="horario-funcionamento__dia">Sábado</span>
+              <span class="horario-funcionamento__hora">9h às 14h</span>
+            </div>
+            <div class="horario-funcionamento__item">
+              <span class="horario-funcionamento__dia">Domingo</span>
+              <span class="horario-funcionamento__hora">Fechado</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Formulário -->
+      <div class="contato-form">
+        <h2 class="contato-form__titulo">Envie uma Mensagem</h2>
+        <p class="contato-form__descricao">
+          Preencha o formulário abaixo e entraremos em contato o mais breve possível.
+        </p>
+
+        <form id="form-contato">
+          <div class="form-grupo">
+            <label for="nome">Nome Completo <span class="obrigatorio">*</span></label>
+            <input 
+              type="text" 
+              id="nome" 
+              name="nome" 
+              required
+              placeholder="Digite seu nome completo"
+            />
+          </div>
+
+          <div class="form-grupo">
+            <label for="email">Email <span class="obrigatorio">*</span></label>
+            <input 
+              type="email" 
+              id="email" 
+              name="email" 
+              required
+              placeholder="seu@email.com"
+            />
+          </div>
+
+          <div class="form-grupo">
+            <label for="telefone">Telefone <span class="obrigatorio">*</span></label>
+            <input 
+              type="tel" 
+              id="telefone" 
+              name="telefone" 
+              required
+              placeholder="(11) 99999-9999"
+            />
+          </div>
+
+          <div class="form-grupo">
+            <label for="assunto">Assunto <span class="obrigatorio">*</span></label>
+            <select id="assunto" name="assunto" required>
+              <option value="">Selecione um assunto</option>
+              <option value="interesse-imovel">Interesse em Imóvel</option>
+              <option value="vender-imovel">Quero Vender/Alugar Imóvel</option>
+              <option value="avaliacao">Solicitar Avaliação</option>
+              <option value="informacoes">Solicitar Informações</option>
+              <option value="reclamacao">Reclamação</option>
+              <option value="outro">Outro</option>
+            </select>
+          </div>
+
+          <div class="form-grupo">
+            <label for="mensagem">Mensagem <span class="obrigatorio">*</span></label>
+            <textarea 
+              id="mensagem" 
+              name="mensagem" 
+              required
+              placeholder="Digite sua mensagem aqui..."
+              minlength="10"
+            ></textarea>
+          </div>
+
+          <div class="form-grupo form-grupo--checkbox">
+            <input 
+              type="checkbox" 
+              id="privacidade" 
+              name="privacidade" 
+              required
+            />
+            <label for="privacidade">
+              Aceito a <a href="#">Política de Privacidade</a> e autorizo o uso dos meus dados.<span class="obrigatorio">*</span>
+            </label>
+          </div>
+
+          <button type="submit" class="botao botao--primario botao--grande botao--completo">
+            📧 Enviar Mensagem
+          </button>
+        </form>
+      </div>
+    </div>
+
+    <!-- Mapa -->
+    <div class="contato-mapa">
+      <iframe 
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3657.1975!2d-46.6563429!3d-23.5629638!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce59c8da0aa315%3A0xd59f9431f2c9776a!2sAv.%20Paulista%2C%201000%20-%20Bela%20Vista%2C%20S%C3%A3o%20Paulo%20-%20SP!5e0!3m2!1spt-BR!2sbr!4v1234567890123!5m2!1spt-BR!2sbr"
+        allowfullscreen="" 
+        loading="lazy" 
+        referrerpolicy="no-referrer-when-downgrade"
+        title="Localização da ImóvelPerfeito"
+      ></iframe>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer__container">
+      <div class="footer__conteudo">
+        <div class="footer__secao footer__sobre">
+          <h3 class="footer__logo">🏠 ImóvelPerfeito</h3>
+          <p>
+            A ImóvelPerfeito é sua parceira ideal na busca pelo imóvel dos sonhos.
+          </p>
+          <div class="footer__redes-sociais">
+            <a href="#" class="footer__rede-social" aria-label="Facebook">📘</a>
+            <a href="#" class="footer__rede-social" aria-label="Instagram">📷</a>
+            <a href="#" class="footer__rede-social" aria-label="LinkedIn">💼</a>
+            <a href="#" class="footer__rede-social" aria-label="YouTube">▶️</a>
+          </div>
+        </div>
+
+        <div class="footer__secao">
+          <h3>Links Rápidos</h3>
+          <nav class="footer__links-lista">
+            <a href="../index.html">→ Início</a>
+            <a href="imoveis.html">→ Imóveis</a>
+            <a href="sobre.html">→ Sobre Nós</a>
+            <a href="contato.html">→ Contato</a>
+          </nav>
+        </div>
+
+        <div class="footer__secao">
+          <h3>Contato</h3>
+          <div class="footer__contato-item">
+            <span>📍</span>
+            <p>Av. Paulista, 1000 - São Paulo/SP</p>
+          </div>
+          <div class="footer__contato-item">
+            <span>📞</span>
+            <p><a href="tel:+551134567890">(11) 3456-7890</a></p>
+          </div>
+          <div class="footer__contato-item">
+            <span>📧</span>
+            <p><a href="mailto:contato@imovelperfeito.com.br">contato@imovelperfeito.com.br</a></p>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer__bottom">
+        <div class="footer__copyright">
+          © 2026 ImóvelPerfeito. Todos os direitos reservados.
+        </div>
+        <nav class="footer__bottom-links">
+          <a href="#">Política de Privacidade</a>
+          <a href="#">Termos de Uso</a>
+        </nav>
+      </div>
+    </div>
+  </footer>
+
+  <!-- JavaScript -->
+  <script type="module">
+    import formularioContato from '../src/scripts/components/formulario-contato.js';
+    
+    // Inicializa formulário
+    formularioContato.inicializar('#form-contato');
+  </script>
+  <script type="module" src="../src/scripts/main.js"></script>
+</body>
+</html>

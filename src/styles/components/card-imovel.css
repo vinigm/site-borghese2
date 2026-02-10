@@ -1,0 +1,239 @@
+/* ========================================
+   CARD DE IMÓVEL - Componente para exibir imóveis
+   ======================================== */
+
+.card-imovel {
+  background-color: var(--cor-fundo);
+  border-radius: var(--borda-radius-lg);
+  overflow: hidden;
+  box-shadow: var(--sombra-md);
+  transition: all var(--transicao-normal);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.card-imovel:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--sombra-xl);
+}
+
+/* === IMAGEM === */
+.card-imovel__imagem-container {
+  position: relative;
+  width: 100%;
+  height: 220px;
+  overflow: hidden;
+  background-color: var(--cor-fundo-escuro);
+}
+
+.card-imovel__imagem {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--transicao-lenta);
+}
+
+.card-imovel:hover .card-imovel__imagem {
+  transform: scale(1.1);
+}
+
+/* === BADGES === */
+.card-imovel__badges {
+  position: absolute;
+  top: var(--espacamento-md);
+  left: var(--espacamento-md);
+  display: flex;
+  gap: var(--espacamento-sm);
+  flex-wrap: wrap;
+}
+
+.card-imovel__badge {
+  padding: var(--espacamento-xs) var(--espacamento-sm);
+  border-radius: var(--borda-radius-sm);
+  font-size: var(--texto-xs);
+  font-weight: var(--font-semibold);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.card-imovel__badge--destaque {
+  background-color: var(--cor-acento);
+  color: var(--cor-fundo);
+}
+
+.card-imovel__badge--tipo {
+  background-color: var(--cor-primaria);
+  color: var(--cor-fundo);
+}
+
+.card-imovel__badge--transacao {
+  background-color: var(--cor-secundaria);
+  color: var(--cor-fundo);
+}
+
+/* === BOTÃO FAVORITAR === */
+.card-imovel__favorito {
+  position: absolute;
+  top: var(--espacamento-md);
+  right: var(--espacamento-md);
+  width: 36px;
+  height: 36px;
+  border-radius: var(--borda-radius-full);
+  background-color: var(--cor-fundo);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--sombra-md);
+  transition: all var(--transicao-rapida);
+  cursor: pointer;
+  color: var(--cor-texto-secundario);
+}
+
+.card-imovel__favorito:hover {
+  transform: scale(1.1);
+  color: #ef4444;
+}
+
+.card-imovel__favorito.ativo {
+  color: #ef4444;
+}
+
+/* === CONTEÚDO === */
+.card-imovel__conteudo {
+  padding: var(--espacamento-lg);
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.card-imovel__preco {
+  font-size: var(--texto-2xl);
+  font-weight: var(--font-bold);
+  color: var(--cor-primaria);
+  margin-bottom: var(--espacamento-xs);
+}
+
+.card-imovel__preco-periodo {
+  font-size: var(--texto-sm);
+  font-weight: var(--font-normal);
+  color: var(--cor-texto-secundario);
+}
+
+.card-imovel__titulo {
+  font-size: var(--texto-lg);
+  font-weight: var(--font-semibold);
+  color: var(--cor-texto-principal);
+  margin-bottom: var(--espacamento-sm);
+  line-height: 1.3;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.card-imovel__endereco {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--espacamento-xs);
+  color: var(--cor-texto-secundario);
+  font-size: var(--texto-sm);
+  margin-bottom: var(--espacamento-md);
+}
+
+.card-imovel__endereco svg,
+.card-imovel__endereco i {
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+/* === CARACTERÍSTICAS === */
+.card-imovel__caracteristicas {
+  display: flex;
+  gap: var(--espacamento-lg);
+  padding-top: var(--espacamento-md);
+  margin-top: auto;
+  border-top: 1px solid var(--cor-borda);
+}
+
+.card-imovel__caracteristica {
+  display: flex;
+  align-items: center;
+  gap: var(--espacamento-xs);
+  color: var(--cor-texto-secundario);
+  font-size: var(--texto-sm);
+}
+
+.card-imovel__caracteristica svg,
+.card-imovel__caracteristica i {
+  color: var(--cor-primaria);
+  font-size: var(--texto-base);
+}
+
+.card-imovel__caracteristica-valor {
+  font-weight: var(--font-semibold);
+  color: var(--cor-texto-principal);
+}
+
+/* === FOOTER DO CARD === */
+.card-imovel__footer {
+  padding: var(--espacamento-md) var(--espacamento-lg);
+  background-color: var(--cor-fundo-alternativo);
+  display: flex;
+  gap: var(--espacamento-sm);
+}
+
+.card-imovel__botao {
+  flex: 1;
+}
+
+/* === GRID DE IMÓVEIS === */
+.grid-imoveis {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: var(--espacamento-xl);
+  margin-top: var(--espacamento-xl);
+}
+
+/* === LOADING STATE === */
+.card-imovel--loading {
+  animation: pulse 1.5s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+.card-imovel--loading .card-imovel__imagem-container,
+.card-imovel--loading .card-imovel__titulo,
+.card-imovel--loading .card-imovel__endereco,
+.card-imovel--loading .card-imovel__caracteristica {
+  background-color: var(--cor-fundo-escuro);
+  color: transparent;
+  user-select: none;
+}
+
+/* === RESPONSIVIDADE === */
+@media (max-width: 768px) {
+  .grid-imoveis {
+    grid-template-columns: 1fr;
+    gap: var(--espacamento-lg);
+  }
+
+  .card-imovel__caracteristicas {
+    gap: var(--espacamento-md);
+  }
+
+  .card-imovel__caracteristica {
+    font-size: var(--texto-xs);
+  }
+
+  .card-imovel__footer {
+    flex-direction: column;
+  }
+}

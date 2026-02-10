@@ -1,0 +1,133 @@
+/* ========================================
+   TIPOGRAFIA - Estilos de texto e títulos
+   ======================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+body {
+  font-family: var(--font-principal);
+  font-size: var(--texto-base);
+  font-weight: var(--font-normal);
+  color: var(--cor-texto-principal);
+  line-height: 1.6;
+}
+
+/* === TÍTULOS === */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-titulos);
+  color: var(--cor-texto-principal);
+  font-weight: var(--font-bold);
+  line-height: 1.2;
+  margin-bottom: var(--espacamento-md);
+}
+
+h1 {
+  font-size: var(--texto-4xl);
+  font-weight: var(--font-bold);
+}
+
+h2 {
+  font-size: var(--texto-3xl);
+  font-weight: var(--font-bold);
+}
+
+h3 {
+  font-size: var(--texto-2xl);
+  font-weight: var(--font-semibold);
+}
+
+h4 {
+  font-size: var(--texto-xl);
+  font-weight: var(--font-semibold);
+}
+
+h5 {
+  font-size: var(--texto-lg);
+  font-weight: var(--font-medium);
+}
+
+h6 {
+  font-size: var(--texto-base);
+  font-weight: var(--font-medium);
+}
+
+/* === PARÁGRAFOS === */
+p {
+  margin-bottom: var(--espacamento-md);
+  color: var(--cor-texto-secundario);
+}
+
+p:last-child {
+  margin-bottom: 0;
+}
+
+/* === CLASSES UTILITÁRIAS DE TEXTO === */
+
+/* Tamanhos */
+.texto-xs { font-size: var(--texto-xs); }
+.texto-sm { font-size: var(--texto-sm); }
+.texto-base { font-size: var(--texto-base); }
+.texto-lg { font-size: var(--texto-lg); }
+.texto-xl { font-size: var(--texto-xl); }
+.texto-2xl { font-size: var(--texto-2xl); }
+.texto-3xl { font-size: var(--texto-3xl); }
+
+/* Pesos */
+.texto-normal { font-weight: var(--font-normal); }
+.texto-medium { font-weight: var(--font-medium); }
+.texto-semibold { font-weight: var(--font-semibold); }
+.texto-bold { font-weight: var(--font-bold); }
+
+/* Cores */
+.texto-primario { color: var(--cor-primaria); }
+.texto-secundario { color: var(--cor-texto-secundario); }
+.texto-claro { color: var(--cor-texto-claro); }
+.texto-branco { color: var(--cor-fundo); }
+
+/* Alinhamento */
+.texto-centro { text-align: center; }
+.texto-esquerda { text-align: left; }
+.texto-direita { text-align: right; }
+
+/* === LINKS === */
+a {
+  color: var(--cor-primaria);
+  transition: color var(--transicao-rapida);
+}
+
+a:hover {
+  color: var(--cor-primaria-escura);
+}
+
+/* === LISTAS === */
+ul.lista-com-marcadores,
+ol.lista-numerada {
+  margin-left: var(--espacamento-lg);
+  margin-bottom: var(--espacamento-md);
+}
+
+ul.lista-com-marcadores {
+  list-style: disc;
+}
+
+ol.lista-numerada {
+  list-style: decimal;
+}
+
+ul.lista-com-marcadores li,
+ol.lista-numerada li {
+  margin-bottom: var(--espacamento-sm);
+  color: var(--cor-texto-secundario);
+}
+
+/* === RESPONSIVIDADE === */
+@media (max-width: 768px) {
+  h1 { font-size: var(--texto-3xl); }
+  h2 { font-size: var(--texto-2xl); }
+  h3 { font-size: var(--texto-xl); }
+  h4 { font-size: var(--texto-lg); }
+  
+  body {
+    font-size: var(--texto-sm);
+  }
+}

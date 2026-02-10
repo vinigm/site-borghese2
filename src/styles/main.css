@@ -1,0 +1,247 @@
+/* ========================================
+   MAIN CSS - Arquivo principal que importa todos os estilos
+   ======================================== */
+
+/* === BASE === */
+@import './base/reset.css';
+@import './base/variables.css';
+@import './base/typography.css';
+
+/* === COMPONENTES === */
+@import './components/header.css';
+@import './components/footer.css';
+@import './components/button.css';
+@import './components/card-imovel.css';
+@import './components/filtros.css';
+
+/* === PÁGINAS === */
+@import './pages/home.css';
+@import './pages/imoveis.css';
+@import './pages/contato.css';
+
+/* ========================================
+   ESTILOS GLOBAIS E UTILIDADES
+   ======================================== */
+
+/* === CONTAINER === */
+.container {
+  max-width: var(--largura-maxima-conteudo);
+  margin: 0 auto;
+  padding: 0 var(--espacamento-lg);
+}
+
+.container--estreito {
+  max-width: 900px;
+}
+
+/* === SEÇÃO === */
+.secao {
+  padding: var(--espacamento-3xl) var(--espacamento-lg);
+}
+
+.secao--cinza {
+  background-color: var(--cor-fundo-alternativo);
+}
+
+/* === UTILITÁRIOS DE ESPAÇAMENTO === */
+.mt-xs { margin-top: var(--espacamento-xs); }
+.mt-sm { margin-top: var(--espacamento-sm); }
+.mt-md { margin-top: var(--espacamento-md); }
+.mt-lg { margin-top: var(--espacamento-lg); }
+.mt-xl { margin-top: var(--espacamento-xl); }
+.mt-2xl { margin-top: var(--espacamento-2xl); }
+.mt-3xl { margin-top: var(--espacamento-3xl); }
+
+.mb-xs { margin-bottom: var(--espacamento-xs); }
+.mb-sm { margin-bottom: var(--espacamento-sm); }
+.mb-md { margin-bottom: var(--espacamento-md); }
+.mb-lg { margin-bottom: var(--espacamento-lg); }
+.mb-xl { margin-bottom: var(--espacamento-xl); }
+.mb-2xl { margin-bottom: var(--espacamento-2xl); }
+.mb-3xl { margin-bottom: var(--espacamento-3xl); }
+
+.pt-xs { padding-top: var(--espacamento-xs); }
+.pt-sm { padding-top: var(--espacamento-sm); }
+.pt-md { padding-top: var(--espacamento-md); }
+.pt-lg { padding-top: var(--espacamento-lg); }
+.pt-xl { padding-top: var(--espacamento-xl); }
+
+.pb-xs { padding-bottom: var(--espacamento-xs); }
+.pb-sm { padding-bottom: var(--espacamento-sm); }
+.pb-md { padding-bottom: var(--espacamento-md); }
+.pb-lg { padding-bottom: var(--espacamento-lg); }
+.pb-xl { padding-bottom: var(--espacamento-xl); }
+
+/* === UTILITÁRIOS DE DISPLAY === */
+.d-none { display: none; }
+.d-block { display: block; }
+.d-flex { display: flex; }
+.d-grid { display: grid; }
+
+.flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.flex-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.flex-column {
+  flex-direction: column;
+}
+
+.gap-xs { gap: var(--espacamento-xs); }
+.gap-sm { gap: var(--espacamento-sm); }
+.gap-md { gap: var(--espacamento-md); }
+.gap-lg { gap: var(--espacamento-lg); }
+.gap-xl { gap: var(--espacamento-xl); }
+
+/* === UTILITÁRIOS DE VISIBILIDADE === */
+@media (max-width: 768px) {
+  .oculto-mobile {
+    display: none !important;
+  }
+}
+
+@media (min-width: 769px) {
+  .visivel-mobile {
+    display: none !important;
+  }
+}
+
+/* === LOADING SPINNER === */
+.loading-spinner {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  border: 4px solid var(--cor-borda);
+  border-radius: 50%;
+  border-top-color: var(--cor-primaria);
+  animation: spinner 0.6s linear infinite;
+}
+
+.loading-spinner--small {
+  width: 20px;
+  height: 20px;
+  border-width: 2px;
+}
+
+.loading-spinner--large {
+  width: 60px;
+  height: 60px;
+  border-width: 6px;
+}
+
+.loading-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--espacamento-3xl);
+}
+
+/* === BADGE === */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  padding: var(--espacamento-xs) var(--espacamento-sm);
+  border-radius: var(--borda-radius-sm);
+  font-size: var(--texto-xs);
+  font-weight: var(--font-semibold);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.badge--primario {
+  background-color: var(--cor-primaria);
+  color: var(--cor-fundo);
+}
+
+.badge--secundario {
+  background-color: var(--cor-secundaria);
+  color: var(--cor-fundo);
+}
+
+.badge--info {
+  background-color: #3b82f6;
+  color: var(--cor-fundo);
+}
+
+.badge--sucesso {
+  background-color: var(--cor-secundaria);
+  color: var(--cor-fundo);
+}
+
+.badge--alerta {
+  background-color: var(--cor-acento);
+  color: var(--cor-fundo);
+}
+
+.badge--perigo {
+  background-color: #ef4444;
+  color: var(--cor-fundo);
+}
+
+/* === ALERTA === */
+.alerta {
+  padding: var(--espacamento-lg);
+  border-radius: var(--borda-radius-md);
+  margin-bottom: var(--espacamento-lg);
+  border-left: 4px solid;
+}
+
+.alerta--info {
+  background-color: rgba(59, 130, 246, 0.1);
+  border-color: #3b82f6;
+  color: #1e40af;
+}
+
+.alerta--sucesso {
+  background-color: rgba(16, 185, 129, 0.1);
+  border-color: var(--cor-secundaria);
+  color: var(--cor-secundaria-escura);
+}
+
+.alerta--alerta {
+  background-color: rgba(245, 158, 11, 0.1);
+  border-color: var(--cor-acento);
+  color: var(--cor-acento-escura);
+}
+
+.alerta--perigo {
+  background-color: rgba(239, 68, 68, 0.1);
+  border-color: #ef4444;
+  color: #dc2626;
+}
+
+/* === SCROLL SUAVE === */
+html {
+  scroll-behavior: smooth;
+}
+
+/* === SELEÇÃO DE TEXTO === */
+::selection {
+  background-color: var(--cor-primaria);
+  color: var(--cor-fundo);
+}
+
+/* === BARRA DE ROLAGEM PERSONALIZADA === */
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: var(--cor-fundo-escuro);
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--cor-primaria);
+  border-radius: var(--borda-radius-sm);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: var(--cor-primaria-escura);
+}

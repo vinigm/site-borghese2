@@ -1,0 +1,271 @@
+/* ========================================
+   PÁGINA DE CONTATO - Estilos específicos
+   ======================================== */
+
+.pagina-contato {
+  min-height: 100vh;
+  background-color: var(--cor-fundo-alternativo);
+}
+
+.contato-container {
+  max-width: var(--largura-maxima-conteudo);
+  margin: 0 auto;
+  padding: var(--espacamento-3xl) var(--espacamento-lg);
+}
+
+.contato-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--espacamento-2xl);
+  margin-top: var(--espacamento-2xl);
+}
+
+/* === INFORMAÇÕES DE CONTATO === */
+.contato-info {
+  background-color: var(--cor-fundo);
+  padding: var(--espacamento-2xl);
+  border-radius: var(--borda-radius-lg);
+  box-shadow: var(--sombra-md);
+}
+
+.contato-info__titulo {
+  font-size: var(--texto-2xl);
+  font-weight: var(--font-bold);
+  color: var(--cor-texto-principal);
+  margin-bottom: var(--espacamento-md);
+}
+
+.contato-info__descricao {
+  color: var(--cor-texto-secundario);
+  margin-bottom: var(--espacamento-xl);
+  line-height: 1.8;
+}
+
+.contato-info__lista {
+  display: flex;
+  flex-direction: column;
+  gap: var(--espacamento-lg);
+}
+
+.contato-info__item {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--espacamento-md);
+}
+
+.contato-info__icone {
+  width: 48px;
+  height: 48px;
+  border-radius: var(--borda-radius-md);
+  background-color: rgba(37, 99, 235, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--cor-primaria);
+  font-size: var(--texto-xl);
+  flex-shrink: 0;
+}
+
+.contato-info__conteudo h4 {
+  font-size: var(--texto-base);
+  font-weight: var(--font-semibold);
+  color: var(--cor-texto-principal);
+  margin-bottom: var(--espacamento-xs);
+}
+
+.contato-info__conteudo p {
+  color: var(--cor-texto-secundario);
+  margin: 0;
+}
+
+.contato-info__conteudo a {
+  color: var(--cor-primaria);
+  transition: color var(--transicao-rapida);
+}
+
+.contato-info__conteudo a:hover {
+  color: var(--cor-primaria-escura);
+}
+
+/* === FORMULÁRIO === */
+.contato-form {
+  background-color: var(--cor-fundo);
+  padding: var(--espacamento-2xl);
+  border-radius: var(--borda-radius-lg);
+  box-shadow: var(--sombra-md);
+}
+
+.contato-form__titulo {
+  font-size: var(--texto-2xl);
+  font-weight: var(--font-bold);
+  color: var(--cor-texto-principal);
+  margin-bottom: var(--espacamento-md);
+}
+
+.contato-form__descricao {
+  color: var(--cor-texto-secundario);
+  margin-bottom: var(--espacamento-xl);
+}
+
+.form-grupo {
+  margin-bottom: var(--espacamento-lg);
+}
+
+.form-grupo label {
+  display: block;
+  font-size: var(--texto-sm);
+  font-weight: var(--font-semibold);
+  color: var(--cor-texto-principal);
+  margin-bottom: var(--espacamento-xs);
+}
+
+.form-grupo label .obrigatorio {
+  color: #ef4444;
+}
+
+.form-grupo input,
+.form-grupo textarea,
+.form-grupo select {
+  width: 100%;
+  padding: var(--espacamento-md);
+  border: 2px solid var(--cor-borda);
+  border-radius: var(--borda-radius-md);
+  font-size: var(--texto-base);
+  color: var(--cor-texto-principal);
+  transition: all var(--transicao-rapida);
+  background-color: var(--cor-fundo);
+}
+
+.form-grupo input:focus,
+.form-grupo textarea:focus,
+.form-grupo select:focus {
+  border-color: var(--cor-primaria);
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+.form-grupo textarea {
+  min-height: 120px;
+  resize: vertical;
+  font-family: inherit;
+}
+
+.form-grupo--checkbox {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--espacamento-sm);
+}
+
+.form-grupo--checkbox input[type="checkbox"] {
+  width: auto;
+  margin-top: 4px;
+}
+
+.form-grupo--checkbox label {
+  margin: 0;
+  font-weight: var(--font-normal);
+  font-size: var(--texto-sm);
+}
+
+.form-grupo--checkbox label a {
+  color: var(--cor-primaria);
+}
+
+.form-erro {
+  color: #ef4444;
+  font-size: var(--texto-sm);
+  margin-top: var(--espacamento-xs);
+  display: none;
+}
+
+.form-grupo.erro input,
+.form-grupo.erro textarea,
+.form-grupo.erro select {
+  border-color: #ef4444;
+}
+
+.form-grupo.erro .form-erro {
+  display: block;
+}
+
+.form-sucesso {
+  padding: var(--espacamento-lg);
+  background-color: rgba(16, 185, 129, 0.1);
+  border: 2px solid var(--cor-secundaria);
+  border-radius: var(--borda-radius-md);
+  color: var(--cor-secundaria-escura);
+  margin-bottom: var(--espacamento-lg);
+  display: none;
+}
+
+.form-sucesso.visivel {
+  display: block;
+}
+
+/* === MAPA === */
+.contato-mapa {
+  margin-top: var(--espacamento-2xl);
+  background-color: var(--cor-fundo);
+  border-radius: var(--borda-radius-lg);
+  overflow: hidden;
+  box-shadow: var(--sombra-md);
+  height: 400px;
+}
+
+.contato-mapa iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+/* === HORÁRIO DE FUNCIONAMENTO === */
+.horario-funcionamento {
+  margin-top: var(--espacamento-xl);
+  padding: var(--espacamento-lg);
+  background-color: var(--cor-fundo-escuro);
+  border-radius: var(--borda-radius-md);
+}
+
+.horario-funcionamento h5 {
+  font-size: var(--texto-base);
+  font-weight: var(--font-semibold);
+  color: var(--cor-texto-principal);
+  margin-bottom: var(--espacamento-md);
+}
+
+.horario-funcionamento__lista {
+  display: flex;
+  flex-direction: column;
+  gap: var(--espacamento-sm);
+}
+
+.horario-funcionamento__item {
+  display: flex;
+  justify-content: space-between;
+  font-size: var(--texto-sm);
+}
+
+.horario-funcionamento__dia {
+  color: var(--cor-texto-secundario);
+  font-weight: var(--font-medium);
+}
+
+.horario-funcionamento__hora {
+  color: var(--cor-texto-principal);
+  font-weight: var(--font-semibold);
+}
+
+/* === RESPONSIVIDADE === */
+@media (max-width: 768px) {
+  .contato-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .contato-info,
+  .contato-form {
+    padding: var(--espacamento-lg);
+  }
+
+  .contato-mapa {
+    height: 300px;
+  }
+}
