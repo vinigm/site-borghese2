@@ -5,11 +5,11 @@
 /* === HERO SECTION === */
 .hero {
   position: relative;
-  height: 600px;
+  height: 520px;
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(135deg, var(--cor-primaria) 0%, var(--cor-primaria-escura) 100%);
+  background: linear-gradient(135deg, #1e40af 0%, #1e3a8a 100%);
   color: var(--cor-fundo);
   overflow: hidden;
 }
