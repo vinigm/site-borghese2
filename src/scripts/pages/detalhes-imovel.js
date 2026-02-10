@@ -8,6 +8,73 @@ import { formatarMoeda, formatarEndereco, gerarLinkWhatsApp } from '../utils/hel
 const container = document.querySelector('#detalhes-imovel .detalhes-imovel__container');
 const tituloEl = document.querySelector('[data-titulo-imovel]');
 const breadcrumbEl = document.querySelector('[data-breadcrumb-imovel]');
+let lightboxState = null;
+
+function criarLightbox() {
+  if (document.querySelector('.detalhes-imovel__lightbox')) return;
+
+  const lightbox = document.createElement('div');
+  lightbox.className = 'detalhes-imovel__lightbox';
+  lightbox.innerHTML = `
+    <div class="detalhes-imovel__lightbox-conteudo" role="dialog" aria-modal="true">
+      <button class="detalhes-imovel__lightbox-fechar" aria-label="Fechar">&times;</button>
+      <button class="detalhes-imovel__lightbox-seta detalhes-imovel__lightbox-seta--esq" aria-label="Imagem anterior">&#8592;</button>
+      <img class="detalhes-imovel__lightbox-imagem" src="" alt="">
+      <button class="detalhes-imovel__lightbox-seta detalhes-imovel__lightbox-seta--dir" aria-label="Proxima imagem">&#8594;</button>
+    </div>
+  `;
+
+  document.body.appendChild(lightbox);
+
+  lightbox.addEventListener('click', (e) => {
+    if (e.target === lightbox) {
+      fecharLightbox();
+    }
+  });
+
+  lightbox.querySelector('.detalhes-imovel__lightbox-fechar').addEventListener('click', fecharLightbox);
+  lightbox.querySelector('.detalhes-imovel__lightbox-seta--esq').addEventListener('click', () => trocarLightbox(-1));
+  lightbox.querySelector('.detalhes-imovel__lightbox-seta--dir').addEventListener('click', () => trocarLightbox(1));
+
+  document.addEventListener('keydown', (e) => {
+    if (!lightbox.classList.contains('ativo')) return;
+    if (e.key === 'Escape') fecharLightbox();
+    if (e.key === 'ArrowLeft') trocarLightbox(-1);
+    if (e.key === 'ArrowRight') trocarLightbox(1);
+  });
+}
+
+function abrirLightbox(indice) {
+  const lightbox = document.querySelector('.detalhes-imovel__lightbox');
+  if (!lightbox || !lightboxState) return;
+  lightboxState.indice = indice;
+  atualizarLightbox();
+  lightbox.classList.add('ativo');
+  document.body.style.overflow = 'hidden';
+}
+
+function fecharLightbox() {
+  const lightbox = document.querySelector('.detalhes-imovel__lightbox');
+  if (!lightbox) return;
+  lightbox.classList.remove('ativo');
+  document.body.style.overflow = '';
+}
+
+function trocarLightbox(delta) {
+  if (!lightboxState) return;
+  const total = lightboxState.imagens.length;
+  if (!total) return;
+  lightboxState.indice = (lightboxState.indice + delta + total) % total;
+  atualizarLightbox();
+}
+
+function atualizarLightbox() {
+  const lightbox = document.querySelector('.detalhes-imovel__lightbox');
+  if (!lightbox || !lightboxState) return;
+  const img = lightbox.querySelector('.detalhes-imovel__lightbox-imagem');
+  img.src = lightboxState.imagens[lightboxState.indice];
+  img.alt = lightboxState.titulo;
+}
 
 function renderizarErro(titulo, mensagem) {
   if (!container) return;
@@ -58,6 +125,19 @@ function configurarGaleria(imagens, titulo) {
   const lista = listaOriginal.map(resolverCaminhoImagem);
   imagemPrincipal.src = lista[0];
   imagemPrincipal.alt = titulo;
+  imagemPrincipal.setAttribute('data-index', '0');
+
+  lightboxState = {
+    imagens: lista,
+    titulo,
+    indice: 0
+  };
+
+  criarLightbox();
+  imagemPrincipal.addEventListener('click', () => {
+    const indiceAtual = parseInt(imagemPrincipal.getAttribute('data-index'), 10) || 0;
+    abrirLightbox(indiceAtual);
+  });
 
   miniaturas.innerHTML = lista.map((src, index) => `
     <button class="detalhes-imovel__miniatura${index === 0 ? ' ativo' : ''}" data-index="${index}" aria-label="Ver imagem ${index + 1}">
@@ -69,6 +149,7 @@ function configurarGaleria(imagens, titulo) {
     botao.addEventListener('click', () => {
       const index = parseInt(botao.getAttribute('data-index'), 10);
       imagemPrincipal.src = lista[index];
+      imagemPrincipal.setAttribute('data-index', String(index));
       miniaturas.querySelectorAll('.detalhes-imovel__miniatura').forEach(b => b.classList.remove('ativo'));
       botao.classList.add('ativo');
     });
