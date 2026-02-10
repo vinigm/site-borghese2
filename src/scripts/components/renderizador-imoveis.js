@@ -28,6 +28,9 @@ class RenderizadorImoveis {
     // Mensagem padrão do WhatsApp
     const mensagemWhatsApp = `Olá! Tenho interesse no imóvel: ${imovel.titulo} - ${precoFormatado}`;
     const linkWhatsApp = gerarLinkWhatsApp('51993016930', mensagemWhatsApp);
+    const detalhesBase = window.location.pathname.includes('/pages/')
+      ? 'detalhes-imovel.html'
+      : 'pages/detalhes-imovel.html';
 
     return `
       <article class="card-imovel" data-imovel-id="${imovel.id}">
@@ -79,9 +82,9 @@ class RenderizadorImoveis {
             </svg>
             WhatsApp
           </a>
-          <button class="botao botao--outline botao--pequeno card-imovel__botao" onclick="alert('Página de detalhes em desenvolvimento')">
+          <a href="${detalhesBase}?id=${imovel.id}" class="botao botao--outline botao--pequeno card-imovel__botao">
             Ver Detalhes
-          </button>
+          </a>
         </div>
       </article>
     `;

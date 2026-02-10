@@ -1,0 +1,170 @@
+/* ========================================
+   PAGINA DETALHES DO IMOVEL - Estilos
+   ======================================== */
+
+.pagina-detalhes-imovel {
+  min-height: 100vh;
+  background-color: var(--cor-fundo-alternativo);
+}
+
+.detalhes-imovel {
+  padding: var(--espacamento-2xl) var(--espacamento-lg) var(--espacamento-3xl);
+}
+
+.detalhes-imovel__container {
+  max-width: var(--largura-maxima-conteudo);
+  margin: 0 auto;
+}
+
+.detalhes-imovel__layout {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: var(--espacamento-2xl);
+  align-items: start;
+}
+
+.detalhes-imovel__galeria {
+  background-color: var(--cor-fundo);
+  border-radius: var(--borda-radius-lg);
+  box-shadow: var(--sombra-md);
+  padding: var(--espacamento-lg);
+}
+
+.detalhes-imovel__imagem-principal {
+  width: 100%;
+  border-radius: var(--borda-radius-md);
+  overflow: hidden;
+  background-color: var(--cor-fundo-escuro);
+  aspect-ratio: 16 / 9;
+}
+
+.detalhes-imovel__imagem-principal img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.detalhes-imovel__miniaturas {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(90px, 1fr));
+  gap: var(--espacamento-sm);
+  margin-top: var(--espacamento-md);
+}
+
+.detalhes-imovel__miniatura {
+  border: 2px solid transparent;
+  border-radius: var(--borda-radius-sm);
+  overflow: hidden;
+  padding: 0;
+  background: none;
+  cursor: pointer;
+  transition: border-color var(--transicao-rapida);
+}
+
+.detalhes-imovel__miniatura img {
+  width: 100%;
+  height: 70px;
+  object-fit: cover;
+  display: block;
+}
+
+.detalhes-imovel__miniatura.ativo {
+  border-color: var(--cor-primaria);
+}
+
+.detalhes-imovel__info {
+  background-color: var(--cor-fundo);
+  border-radius: var(--borda-radius-lg);
+  box-shadow: var(--sombra-md);
+  padding: var(--espacamento-xl);
+}
+
+.detalhes-imovel__badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--espacamento-xs);
+  margin-bottom: var(--espacamento-md);
+}
+
+.detalhes-imovel__titulo {
+  font-size: var(--texto-2xl);
+  font-weight: var(--font-bold);
+  color: var(--cor-texto-principal);
+  margin-bottom: var(--espacamento-sm);
+}
+
+.detalhes-imovel__preco {
+  font-size: var(--texto-3xl);
+  font-weight: var(--font-bold);
+  color: var(--cor-primaria);
+  margin-bottom: var(--espacamento-sm);
+}
+
+.detalhes-imovel__endereco {
+  color: var(--cor-texto-secundario);
+  margin-bottom: var(--espacamento-lg);
+}
+
+.detalhes-imovel__caracteristicas {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--espacamento-sm) var(--espacamento-md);
+  padding: var(--espacamento-md) 0;
+  border-top: 1px solid var(--cor-borda);
+  border-bottom: 1px solid var(--cor-borda);
+  margin-bottom: var(--espacamento-lg);
+}
+
+.detalhes-imovel__caracteristica {
+  font-size: var(--texto-sm);
+  color: var(--cor-texto-secundario);
+}
+
+.detalhes-imovel__caracteristica strong {
+  color: var(--cor-texto-principal);
+}
+
+.detalhes-imovel__descricao {
+  color: var(--cor-texto-secundario);
+  line-height: 1.7;
+  margin-bottom: var(--espacamento-lg);
+}
+
+.detalhes-imovel__acoes {
+  display: flex;
+  gap: var(--espacamento-sm);
+  flex-wrap: wrap;
+}
+
+.detalhes-imovel__erro {
+  background-color: var(--cor-fundo);
+  border-radius: var(--borda-radius-lg);
+  padding: var(--espacamento-2xl);
+  box-shadow: var(--sombra-md);
+  text-align: center;
+}
+
+.detalhes-imovel__erro h2 {
+  font-size: var(--texto-2xl);
+  margin-bottom: var(--espacamento-md);
+}
+
+.detalhes-imovel__erro p {
+  color: var(--cor-texto-secundario);
+  margin-bottom: var(--espacamento-lg);
+}
+
+@media (max-width: 900px) {
+  .detalhes-imovel__layout {
+    grid-template-columns: 1fr;
+  }
+
+  .detalhes-imovel__info {
+    order: 2;
+  }
+
+  .detalhes-imovel__galeria {
+    order: 1;
+  }
+}
