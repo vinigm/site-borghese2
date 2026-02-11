@@ -50,7 +50,7 @@ class SistemaFiltros {
    * Adiciona event listeners aos campos do formulário
    */
   adicionarEventListeners() {
-    // Botão aplicar
+    // Botão aplicar (mantém para quem quiser usar)
     const botaoAplicar = this.formulario.querySelector('[data-acao="aplicar-filtros"]');
     if (botaoAplicar) {
       botaoAplicar.addEventListener('click', (e) => {
@@ -68,21 +68,8 @@ class SistemaFiltros {
       });
     }
 
-    // Inputs com debounce
-    const inputs = this.formulario.querySelectorAll('input[type="text"], input[type="number"]');
-    inputs.forEach(input => {
-      input.addEventListener('input', debounce(() => {
-        this.aplicarFiltros();
-      }, 500));
-    });
-
-    // Selects
-    const selects = this.formulario.querySelectorAll('select');
-    selects.forEach(select => {
-      select.addEventListener('change', () => {
-        this.aplicarFiltros();
-      });
-    });
+    // Removidos listeners automáticos - agora controlados pela página
+    // para evitar duplicação de chamadas
 
     // Enter no formulário
     this.formulario.addEventListener('submit', (e) => {

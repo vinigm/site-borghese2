@@ -362,17 +362,11 @@
             <div class="filtros__acoes">
               <button 
                 type="button" 
-                class="botao botao--primario filtros__botao-aplicar"
-                data-acao="aplicar-filtros"
-              >
-                🔍 Aplicar Filtros
-              </button>
-              <button 
-                type="button" 
                 class="botao botao--outline filtros__botao-limpar"
                 data-acao="limpar-filtros"
+                style="flex: 1;"
               >
-                🔄 Limpar
+                🔄 Limpar Filtros
               </button>
             </div>
           </form>
@@ -589,10 +583,44 @@
       checkboxesBairros.forEach(checkbox => {
         checkbox.addEventListener('change', () => {
           atualizarTextoBairros();
+          // Aplica filtros automaticamente
+          setTimeout(() => sistemaFiltros.aplicarFiltros(), 100);
         });
       });
 
       sistemaFiltros.inicializar('#form-filtros', '#lista-imoveis');
+
+      // Aplica filtros automaticamente em TODOS os campos
+      const todosSelects = document.querySelectorAll('#form-filtros select');
+      todosSelects.forEach(select => {
+        select.addEventListener('change', () => {
+          sistemaFiltros.aplicarFiltros();
+        });
+      });
+
+      // Inputs numéricos aplicam filtros automaticamente com debounce
+      const inputsNumero = document.querySelectorAll('#form-filtros input[type="number"]');
+      let timeoutNumero;
+      inputsNumero.forEach(input => {
+        input.addEventListener('input', () => {
+          clearTimeout(timeoutNumero);
+          timeoutNumero = setTimeout(() => {
+            sistemaFiltros.aplicarFiltros();
+          }, 800);
+        });
+      });
+
+      // Campo de busca também aplica automaticamente
+      const campoBusca = document.querySelector('#form-filtros input[name="busca"]');
+      if (campoBusca) {
+        let timeoutBusca;
+        campoBusca.addEventListener('input', () => {
+          clearTimeout(timeoutBusca);
+          timeoutBusca = setTimeout(() => {
+            sistemaFiltros.aplicarFiltros();
+          }, 600);
+        });
+      }
 
       // Pega parâmetros da URL
       const tipo = urlParams.get('tipo');
