@@ -48,7 +48,20 @@ class RenderizadorImoveis {
             alt="${imovel.titulo}"
             class="card-imovel__imagem"
             loading="lazy"
+            data-imagem-index="0"
           />
+          ${imovel.imagens && imovel.imagens.length > 1 ? `
+          <button class="card-imovel__nav card-imovel__nav--prev" data-imovel-id="${imovel.id}">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="15 18 9 12 15 6"></polyline>
+            </svg>
+          </button>
+          <button class="card-imovel__nav card-imovel__nav--next" data-imovel-id="${imovel.id}">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="9 18 15 12 9 6"></polyline>
+            </svg>
+          </button>
+          ` : ''}
           <div class="card-imovel__badges">
             ${badges.join('')}
           </div>
@@ -207,6 +220,67 @@ class RenderizadorImoveis {
         const id = botao.dataset.id;
         // Implementar lógica de favoritos aqui
         console.log(`Imóvel ${id} ${botao.classList.contains('ativo') ? 'adicionado aos' : 'removido dos'} favoritos`);
+      });
+    });
+
+    // Adicionar navegação de imagens nos cards
+    this.adicionarNavegacaoImagens(container);
+  }
+
+  /**
+   * Adiciona navegação de imagens nos cards
+   * @param {HTMLElement} container - Container dos cards
+   */
+  adicionarNavegacaoImagens(container) {
+    // Resolver caminho das imagens
+    const resolverCaminhoImagem = (src) => {
+      if (!src) return 'assets/images/placeholder.jpg';
+      if (src.startsWith('http') || src.startsWith('/') || src.startsWith('../') || src.startsWith('./')) {
+        return src;
+      }
+      const estaEmPages = window.location.pathname.includes('/pages/');
+      return estaEmPages ? `../${src}` : src;
+    };
+
+    // Navegação anterior
+    container.querySelectorAll('.card-imovel__nav--prev').forEach(botao => {
+      botao.addEventListener('click', (e) => {
+        e.stopPropagation();
+        e.preventDefault();
+        
+        const card = botao.closest('.card-imovel');
+        const img = card.querySelector('.card-imovel__imagem');
+        const imovelId = card.dataset.imovelId;
+        const imovel = window.imoveisData?.find(i => i.id == imovelId);
+        
+        if (!imovel || !imovel.imagens) return;
+        
+        let currentIndex = parseInt(img.dataset.imagemIndex) || 0;
+        currentIndex = (currentIndex - 1 + imovel.imagens.length) % imovel.imagens.length;
+        
+        img.src = resolverCaminhoImagem(imovel.imagens[currentIndex]);
+        img.dataset.imagemIndex = currentIndex;
+      });
+    });
+
+    // Navegação próxima
+    container.querySelectorAll('.card-imovel__nav--next').forEach(botao => {
+      botao.addEventListener('click', (e) => {
+        e.stopPropagation();
+        e.preventDefault();
+        
+        const card = botao.closest('.card-imovel');
+        const img = card.querySelector('.card-imovel__imagem');
+        const imovelId = card.dataset.imovelId;
+        const imovel = window.imoveisData?.find(i => i.id == imovelId);
+        
+        if (!imovel || !imovel.imagens) return;
+        
+        let currentIndex = parseInt(img.dataset.imagemIndex) || 0;
+        currentIndex = (currentIndex + 1) % imovel.imagens.length;
+        
+        img.src = resolverCaminhoImagem(imovel.imagens[currentIndex]);
+        img.dataset.imagemIndex = currentIndex;
       });
     });
   }

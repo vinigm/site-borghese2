@@ -176,6 +176,9 @@ class SistemaFiltros {
 
       // Busca imóveis
       const imoveis = await carregadorDados.buscarImoveis(this.filtros);
+      
+      // Disponibilizar globalmente para navegação de imagens
+      window.imoveisData = imoveis;
 
       // Renderiza resultados
       renderizadorImoveis.renderizarLista(imoveis, this.containerResultados);

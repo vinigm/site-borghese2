@@ -70,22 +70,32 @@
   <!-- HERO SECTION -->
   <section class="hero">
     <div class="hero__container">
-      <h1 class="hero__titulo">Encontre o Imóvel dos Seus Sonhos</h1>
-      <p class="hero__subtitulo">
-        A melhor seleção de imóveis para você morar ou investir.
-        Apartamentos, casas e terrenos nas melhores localizações.
-      </p>
+      <div class="hero__conteudo">
+        <div class="hero__texto">
+          <h1 class="hero__titulo">Encontre o Imóvel dos Seus Sonhos</h1>
+          <p class="hero__subtitulo">
+            A melhor seleção de imóveis para você morar ou investir.
+            Apartamentos, casas e terrenos nas melhores localizações.
+          </p>
+        </div>
 
-      <div class="hero__busca">
-        <input 
-          type="text" 
-          class="hero__busca-input" 
-          placeholder="Busque por bairro, cidade ou tipo de imóvel..."
-          id="busca-rapida"
-        />
-        <button class="botao botao--primario hero__busca-botao" id="btn-busca-rapida">
-          🔍 Buscar
-        </button>
+        <div class="hero__busca-wrapper">
+          <p class="hero__busca-label">Usar a busca rápida é a maneira mais eficiente para encontrar seu imóvel</p>
+          <div class="hero__busca">
+            <input 
+              type="text" 
+              class="hero__busca-input" 
+              placeholder="Busque por bairro, cidade ou tipo de imóvel..."
+              id="busca-rapida"
+            />
+            <button class="botao botao--primario hero__busca-botao" id="btn-busca-rapida">
+              🔍 Buscar
+            </button>
+          </div>
+          <a href="pages/imoveis.html" class="hero__busca-avancada">
+            Ou utilize nossa busca avançada
+          </a>
+        </div>
       </div>
     </div>
   </section>
@@ -234,7 +244,7 @@
             <span>📍</span>
             <div>
               <strong>Endereço</strong>
-              <p>Av. Clemenciano Barnasque, 386 - Porto Alegre/RS</p>
+              <p>Rua Almirante Gonçalves, 214 - Porto Alegre/RS</p>
             </div>
           </div>
           <div class="footer__contato-item">
@@ -291,6 +301,7 @@
     async function carregarDestaques() {
       try {
         const imoveis = await carregadorDados.carregarImoveisDestaque();
+        window.imoveisData = imoveis; // Disponibilizar globalmente para navegação de imagens
         const container = document.getElementById('destaques-container');
         
         // Limita a 3 imóveis
