@@ -96,9 +96,22 @@
   align-items: center;
 }
 
+.filtros__range--vertical {
+  display: flex;
+  flex-direction: column;
+  gap: var(--espacamento-xs);
+  align-items: stretch;
+}
+
 .filtros__range-separador {
   color: var(--cor-texto-secundario);
   font-weight: var(--font-semibold);
+}
+
+.filtros__range--vertical .filtros__range-separador {
+  text-align: center;
+  font-size: var(--texto-sm);
+  padding: var(--espacamento-xs) 0;
 }
 
 /* === CHECKBOXES E RADIOS === */
