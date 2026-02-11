@@ -332,7 +332,7 @@
 
         const html = empreendimentos.slice(0, 3).map(emp => `
           <div class="card-empreendimento" data-empreendimento-id="${emp.id}">
-            <div class="card-empreendimento__imagem">
+            <div class="card-empreendimento__imagem" onclick="window.location.href='pages/empreendimento.html?id=${emp.id}'" style="cursor: pointer;">
               <img src="${resolverCaminhoImagem(emp.imagens?.[0])}" alt="${emp.nome}" loading="lazy" data-imagem-index="0">
               ${emp.imagens && emp.imagens.length > 1 ? `
                 <button class="card-empreendimento__nav card-empreendimento__nav--prev" data-emp-id="${emp.id}">

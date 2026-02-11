@@ -42,7 +42,7 @@ class RenderizadorImoveis {
 
     return `
       <article class="card-imovel" data-imovel-id="${imovel.id}">
-        <div class="card-imovel__imagem-container">
+        <div class="card-imovel__imagem-container" onclick="window.location.href='${detalhesBase}?id=${imovel.id}'" style="cursor: pointer;">
           <img 
             src="${resolverCaminhoImagem(imovel.imagens && imovel.imagens[0])}" 
             alt="${imovel.titulo}"
