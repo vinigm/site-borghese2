@@ -133,6 +133,13 @@ class CarregadorDados {
       imoveis = imoveis.filter(imovel => imovel.empreendimento === filtros.empreendimento);
     }
 
+    // Filtro por bairros (múltiplos)
+    if (filtros.bairros && filtros.bairros.length > 0) {
+      imoveis = imoveis.filter(imovel => 
+        filtros.bairros.includes(imovel.endereco.bairro)
+      );
+    }
+
     if (filtros.precoMin !== undefined) {
       imoveis = imoveis.filter(imovel => imovel.preco >= filtros.precoMin);
     }

@@ -117,6 +117,12 @@ class SistemaFiltros {
       filtros.empreendimento = empreendimento;
     }
 
+    // Bairros (múltiplos)
+    const bairrosSelecionados = formData.getAll('bairros');
+    if (bairrosSelecionados && bairrosSelecionados.length > 0) {
+      filtros.bairros = bairrosSelecionados;
+    }
+
     // Preço mínimo e máximo
     const precoMin = formData.get('precoMin');
     if (precoMin && precoMin !== '') {

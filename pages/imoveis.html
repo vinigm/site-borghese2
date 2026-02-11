@@ -38,6 +38,18 @@
       </nav>
 
       <div class="header__cta oculto-mobile">
+        <a 
+          href="https://wa.me/5551993016930?text=Olá!%20Vim%20do%20site%20e%20gostaria%20de%20mais%20informações." 
+          target="_blank" 
+          rel="noopener"
+          class="botao botao--whatsapp"
+          style="margin-right: 0.75rem;"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+          </svg>
+          WhatsApp
+        </a>
         <a href="contato.html" class="botao botao--primario">
           Fale Conosco
         </a>
@@ -113,6 +125,134 @@
                 <option value="todos">Todos</option>
                 <!-- Opções serão carregadas via JavaScript -->
               </select>
+            </div>
+
+            <!-- Bairros -->
+            <div class="filtros__campo filtros__campo--dropdown">
+              <label class="filtros__label">
+                <span>📍</span>
+                Bairros
+              </label>
+              <button 
+                type="button" 
+                class="filtros__dropdown-toggle" 
+                id="bairros-toggle"
+                aria-expanded="false"
+              >
+                <span class="filtros__dropdown-texto">Todos os bairros</span>
+                <svg class="filtros__dropdown-icone" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <polyline points="6 9 12 15 18 9"></polyline>
+                </svg>
+              </button>
+              <div class="filtros__dropdown-menu" id="bairros-menu">
+                <div class="filtros__dropdown-search">
+                  <input 
+                    type="text" 
+                    class="filtros__input" 
+                    id="busca-bairro"
+                    placeholder="Buscar bairro..."
+                  />
+                </div>
+                <div class="filtros__checkbox-lista" id="lista-bairros">
+                  <!-- Bairros de Porto Alegre -->
+                  <label class="filtros__checkbox-item">
+                    <input type="checkbox" name="bairros" value="Menino Deus" />
+                    <span>Menino Deus</span>
+                  </label>
+                  <label class="filtros__checkbox-item">
+                    <input type="checkbox" name="bairros" value="Teresópolis" />
+                    <span>Teresópolis</span>
+                  </label>
+                  <label class="filtros__checkbox-item">
+                    <input type="checkbox" name="bairros" value="Moinhos de Vento" />
+                    <span>Moinhos de Vento</span>
+                  </label>
+                  <label class="filtros__checkbox-item">
+                    <input type="checkbox" name="bairros" value="Petrópolis" />
+                    <span>Petrópolis</span>
+                  </label>
+                  <label class="filtros__checkbox-item">
+                    <input type="checkbox" name="bairros" value="Bela Vista" />
+                    <span>Bela Vista</span>
+                  </label>
+                  <label class="filtros__checkbox-item">
+                    <input type="checkbox" name="bairros" value="Três Figueiras" />
+                    <span>Três Figueiras</span>
+                  </label>
+                  <label class="filtros__checkbox-item">
+                    <input type="checkbox" name="bairros" value="Auxiliadora" />
+                    <span>Auxiliadora</span>
+                  </label>
+                  <label class="filtros__checkbox-item">
+                    <input type="checkbox" name="bairros" value="Mont Serrat" />
+                    <span>Mont Serrat</span>
+                  </label>
+                  <label class="filtros__checkbox-item">
+                    <input type="checkbox" name="bairros" value="Boa Vista" />
+                    <span>Boa Vista</span>
+                  </label>
+                  <label class="filtros__checkbox-item">
+                    <input type="checkbox" name="bairros" value="Higienópolis" />
+                    <span>Higienópolis</span>
+                  </label>
+                  <label class="filtros__checkbox-item">
+                    <input type="checkbox" name="bairros" value="Rio Branco" />
+                    <span>Rio Branco</span>
+                  </label>
+                  <label class="filtros__checkbox-item">
+                    <input type="checkbox" name="bairros" value="Jardim Botânico" />
+                    <span>Jardim Botânico</span>
+                  </label>
+                  <label class="filtros__checkbox-item">
+                    <input type="checkbox" name="bairros" value="Chácara das Pedras" />
+                    <span>Chácara das Pedras</span>
+                  </label>
+                  <label class="filtros__checkbox-item">
+                    <input type="checkbox" name="bairros" value="Bom Fim" />
+                    <span>Bom Fim</span>
+                  </label>
+                  <label class="filtros__checkbox-item">
+                    <input type="checkbox" name="bairros" value="Centro Histórico" />
+                    <span>Centro Histórico</span>
+                  </label>
+                  <label class="filtros__checkbox-item">
+                    <input type="checkbox" name="bairros" value="Cidade Baixa" />
+                    <span>Cidade Baixa</span>
+                  </label>
+                  <label class="filtros__checkbox-item">
+                    <input type="checkbox" name="bairros" value="Praia de Belas" />
+                    <span>Praia de Belas</span>
+                  </label>
+                  <label class="filtros__checkbox-item">
+                    <input type="checkbox" name="bairros" value="Cristal" />
+                    <span>Cristal</span>
+                  </label>
+                  <label class="filtros__checkbox-item">
+                    <input type="checkbox" name="bairros" value="Ipanema" />
+                    <span>Ipanema</span>
+                  </label>
+                  <label class="filtros__checkbox-item">
+                    <input type="checkbox" name="bairros" value="Tristeza" />
+                    <span>Tristeza</span>
+                  </label>
+                  <label class="filtros__checkbox-item">
+                    <input type="checkbox" name="bairros" value="Cavalhada" />
+                    <span>Cavalhada</span>
+                  </label>
+                  <label class="filtros__checkbox-item">
+                    <input type="checkbox" name="bairros" value="Restinga" />
+                    <span>Restinga</span>
+                  </label>
+                  <label class="filtros__checkbox-item">
+                    <input type="checkbox" name="bairros" value="Belém Novo" />
+                    <span>Belém Novo</span>
+                  </label>
+                  <label class="filtros__checkbox-item">
+                    <input type="checkbox" name="bairros" value="Lami" />
+                    <span>Lami</span>
+                  </label>
+                </div>
+              </div>
             </div>
 
             <!-- Faixa de Preço -->
@@ -380,6 +520,78 @@
 
     // Inicializa sistema de filtros
     carregarEmpreendimentosSelect().then(() => {
+      // Controle do dropdown de bairros
+      const bairrosToggle = document.getElementById('bairros-toggle');
+      const bairrosMenu = document.getElementById('bairros-menu');
+      const buscaBairro = document.getElementById('busca-bairro');
+      const listaBairros = document.getElementById('lista-bairros');
+      const checkboxesBairros = document.querySelectorAll('input[name="bairros"]');
+
+      // Toggle do dropdown
+      if (bairrosToggle && bairrosMenu) {
+        bairrosToggle.addEventListener('click', (e) => {
+          e.stopPropagation();
+          const isAberto = bairrosMenu.classList.contains('ativo');
+          bairrosMenu.classList.toggle('ativo');
+          bairrosToggle.setAttribute('aria-expanded', !isAberto);
+        });
+
+        // Fecha ao clicar fora
+        document.addEventListener('click', (e) => {
+          if (!bairrosToggle.contains(e.target) && !bairrosMenu.contains(e.target)) {
+            bairrosMenu.classList.remove('ativo');
+            bairrosToggle.setAttribute('aria-expanded', 'false');
+          }
+        });
+
+        // Impede que cliques dentro do menu o fechem
+        bairrosMenu.addEventListener('click', (e) => {
+          e.stopPropagation();
+        });
+      }
+
+      // Busca de bairros
+      if (buscaBairro && listaBairros) {
+        buscaBairro.addEventListener('input', (e) => {
+          const termo = e.target.value.toLowerCase();
+          const items = listaBairros.querySelectorAll('.filtros__checkbox-item');
+          
+          items.forEach(item => {
+            const texto = item.textContent.toLowerCase();
+            if (texto.includes(termo)) {
+              item.style.display = 'flex';
+            } else {
+              item.style.display = 'none';
+            }
+          });
+        });
+      }
+
+      // Atualiza texto do botão quando checkboxes mudam
+      function atualizarTextoBairros() {
+        const selecionados = Array.from(checkboxesBairros)
+          .filter(cb => cb.checked)
+          .map(cb => cb.value);
+        
+        const textoEl = bairrosToggle.querySelector('.filtros__dropdown-texto');
+        
+        if (selecionados.length === 0) {
+          textoEl.textContent = 'Todos os bairros';
+        } else if (selecionados.length === 1) {
+          textoEl.textContent = selecionados[0];
+        } else if (selecionados.length === 2) {
+          textoEl.textContent = `${selecionados[0]} e mais 1`;
+        } else {
+          textoEl.textContent = `${selecionados[0]} e mais ${selecionados.length - 1}`;
+        }
+      }
+
+      checkboxesBairros.forEach(checkbox => {
+        checkbox.addEventListener('change', () => {
+          atualizarTextoBairros();
+        });
+      });
+
       sistemaFiltros.inicializar('#form-filtros', '#lista-imoveis');
 
       // Pega parâmetros da URL
