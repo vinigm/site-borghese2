@@ -1,0 +1,3 @@
+# Dependências para otimização de imagens
+Pillow>=10.0.0
+tqdm>=4.66.0
