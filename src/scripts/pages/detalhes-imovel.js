@@ -134,10 +134,45 @@ function configurarGaleria(imagens, titulo) {
   };
 
   criarLightbox();
-  imagemPrincipal.addEventListener('click', () => {
+  
+  // Clique na imagem principal abre lightbox
+  imagemPrincipal.addEventListener('click', (e) => {
+    // Não abre lightbox se clicou nos botões de navegação
+    if (e.target.closest('.detalhes-imovel__nav')) return;
+    
     const indiceAtual = parseInt(imagemPrincipal.getAttribute('data-index'), 10) || 0;
     abrirLightbox(indiceAtual);
   });
+
+  // Navegação com setas
+  const btnPrev = document.getElementById('nav-prev-imovel');
+  const btnNext = document.getElementById('nav-next-imovel');
+
+  const atualizarImagem = (novoIndex) => {
+    imagemPrincipal.src = lista[novoIndex];
+    imagemPrincipal.setAttribute('data-index', String(novoIndex));
+    miniaturas.querySelectorAll('.detalhes-imovel__miniatura').forEach((b, idx) => {
+      b.classList.toggle('ativo', idx === novoIndex);
+    });
+  };
+
+  if (btnPrev) {
+    btnPrev.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const currentIndex = parseInt(imagemPrincipal.getAttribute('data-index'), 10) || 0;
+      const novoIndex = (currentIndex - 1 + lista.length) % lista.length;
+      atualizarImagem(novoIndex);
+    });
+  }
+
+  if (btnNext) {
+    btnNext.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const currentIndex = parseInt(imagemPrincipal.getAttribute('data-index'), 10) || 0;
+      const novoIndex = (currentIndex + 1) % lista.length;
+      atualizarImagem(novoIndex);
+    });
+  }
 
   miniaturas.innerHTML = lista.map((src, index) => `
     <button class="detalhes-imovel__miniatura${index === 0 ? ' ativo' : ''}" data-index="${index}" aria-label="Ver imagem ${index + 1}">
@@ -148,10 +183,7 @@ function configurarGaleria(imagens, titulo) {
   miniaturas.querySelectorAll('.detalhes-imovel__miniatura').forEach((botao) => {
     botao.addEventListener('click', () => {
       const index = parseInt(botao.getAttribute('data-index'), 10);
-      imagemPrincipal.src = lista[index];
-      imagemPrincipal.setAttribute('data-index', String(index));
-      miniaturas.querySelectorAll('.detalhes-imovel__miniatura').forEach(b => b.classList.remove('ativo'));
-      botao.classList.add('ativo');
+      atualizarImagem(index);
     });
   });
 }
@@ -194,7 +226,19 @@ async function carregarDetalhes() {
       <div class="detalhes-imovel__layout">
         <div class="detalhes-imovel__galeria">
           <div class="detalhes-imovel__imagem-principal">
-            <img id="imagem-principal" src="" alt="${imovel.titulo}">
+            <img id="imagem-principal" src="" alt="${imovel.titulo}" data-index="0">
+            ${imovel.imagens && imovel.imagens.length > 1 ? `
+              <button class="detalhes-imovel__nav detalhes-imovel__nav--prev" id="nav-prev-imovel">
+                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="15 18 9 12 15 6"></polyline>
+                </svg>
+              </button>
+              <button class="detalhes-imovel__nav detalhes-imovel__nav--next" id="nav-next-imovel">
+                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="9 18 15 12 9 6"></polyline>
+                </svg>
+              </button>
+            ` : ''}
           </div>
           <div class="detalhes-imovel__miniaturas" id="miniaturas"></div>
         </div>

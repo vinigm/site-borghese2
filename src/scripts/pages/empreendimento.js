@@ -107,6 +107,18 @@ function criarGaleriaEmpreendimento(imagens, nome) {
     <div class="empreendimento__galeria">
       <div class="empreendimento__imagem-principal" id="imagem-principal-emp">
         <img src="${imagemPrincipal}" alt="${nome}" data-index="0">
+        ${imagens.length > 1 ? `
+          <button class="empreendimento__nav empreendimento__nav--prev" id="nav-prev-emp">
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="15 18 9 12 15 6"></polyline>
+            </svg>
+          </button>
+          <button class="empreendimento__nav empreendimento__nav--next" id="nav-next-emp">
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="9 18 15 12 9 6"></polyline>
+            </svg>
+          </button>
+        ` : ''}
       </div>
       ${imagens.length > 1 ? `
         <div class="empreendimento__miniaturas" id="miniaturas-emp">
@@ -264,25 +276,55 @@ async function carregarEmpreendimento() {
     setTimeout(() => {
       const imagemPrincipal = document.getElementById('imagem-principal-emp');
       const miniaturas = document.querySelectorAll('.empreendimento__miniatura');
+      const btnPrev = document.getElementById('nav-prev-emp');
+      const btnNext = document.getElementById('nav-next-emp');
       
       if (imagemPrincipal && miniaturas.length > 0) {
         // Clique na imagem principal abre lightbox
-        imagemPrincipal.addEventListener('click', () => {
+        imagemPrincipal.addEventListener('click', (e) => {
+          // Não abre lightbox se clicou nos botões de navegação
+          if (e.target.closest('.empreendimento__nav')) return;
+          
           const indice = parseInt(imagemPrincipal.querySelector('img').getAttribute('data-index') || '0');
           abrirLightbox(indice);
         });
 
+        // Função para atualizar imagem
+        const atualizarImagem = (novoIndex) => {
+          const imgElement = imagemPrincipal.querySelector('img');
+          if (imgElement && empreendimento.imagens[novoIndex]) {
+            imgElement.src = resolverCaminhoImagem(empreendimento.imagens[novoIndex]);
+            imgElement.setAttribute('data-index', novoIndex);
+            
+            // Remove classe ativo de todas e adiciona na nova
+            miniaturas.forEach(m => m.classList.remove('ativo'));
+            miniaturas[novoIndex].classList.add('ativo');
+          }
+        };
+
+        // Navegação com setas
+        if (btnPrev) {
+          btnPrev.addEventListener('click', (e) => {
+            e.stopPropagation();
+            const currentIndex = parseInt(imagemPrincipal.querySelector('img').getAttribute('data-index') || '0');
+            const novoIndex = (currentIndex - 1 + empreendimento.imagens.length) % empreendimento.imagens.length;
+            atualizarImagem(novoIndex);
+          });
+        }
+
+        if (btnNext) {
+          btnNext.addEventListener('click', (e) => {
+            e.stopPropagation();
+            const currentIndex = parseInt(imagemPrincipal.querySelector('img').getAttribute('data-index') || '0');
+            const novoIndex = (currentIndex + 1) % empreendimento.imagens.length;
+            atualizarImagem(novoIndex);
+          });
+        }
+
+        // Clique nas miniaturas
         miniaturas.forEach((miniatura, index) => {
           miniatura.addEventListener('click', () => {
-            const imgElement = imagemPrincipal.querySelector('img');
-            if (imgElement && empreendimento.imagens[index]) {
-              imgElement.src = resolverCaminhoImagem(empreendimento.imagens[index]);
-              imgElement.setAttribute('data-index', index);
-              
-              // Remove classe ativo de todas e adiciona na clicada
-              miniaturas.forEach(m => m.classList.remove('ativo'));
-              miniatura.classList.add('ativo');
-            }
+            atualizarImagem(index);
           });
         });
       }
