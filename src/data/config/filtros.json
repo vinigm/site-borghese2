@@ -1,0 +1,56 @@
+{
+  "tipos": [
+    "apartamento",
+    "casa",
+    "terreno",
+    "comercial"
+  ],
+  "transacoes": [
+    "venda",
+    "aluguel"
+  ],
+  "faixas_preco_venda": [
+    {
+      "label": "Até R$ 300.000",
+      "min": 0,
+      "max": 300000
+    },
+    {
+      "label": "R$ 300.000 - R$ 500.000",
+      "min": 300000,
+      "max": 500000
+    },
+    {
+      "label": "R$ 500.000 - R$ 800.000",
+      "min": 500000,
+      "max": 800000
+    },
+    {
+      "label": "Acima de R$ 800.000",
+      "min": 800000,
+      "max": 999999999
+    }
+  ],
+  "faixas_preco_aluguel": [
+    {
+      "label": "Até R$ 1.500",
+      "min": 0,
+      "max": 1500
+    },
+    {
+      "label": "R$ 1.500 - R$ 2.500",
+      "min": 1500,
+      "max": 2500
+    },
+    {
+      "label": "R$ 2.500 - R$ 4.000",
+      "min": 2500,
+      "max": 4000
+    },
+    {
+      "label": "Acima de R$ 4.000",
+      "min": 4000,
+      "max": 999999999
+    }
+  ]
+}

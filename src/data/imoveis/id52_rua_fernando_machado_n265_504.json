@@ -1,0 +1,44 @@
+{
+  "id": 52,
+  "empreendimentoId": null,
+  "empreendimento": "Edificio Dom Mauricio",
+  "unidade": "504",
+  "torre": null,
+  "titulo": "Oportunidade 1D no Centro",
+  "tipo": "apartamento",
+  "transacao": "venda",
+  "preco": 270000,
+  "endereco": {
+    "rua": "Rua Fernando Machado, 265",
+    "bairro": "Centro",
+    "cidade": "Porto Alegre",
+    "estado": "RS"
+  },
+  "caracteristicas": {
+    "quartos": 1,
+    "banheiros": 1,
+    "vagas": 0,
+    "area": 40,
+    "condominio": 476,
+    "iptu": 365
+  },
+  "descricao": "Excelente oportunidade de apartamento em ÓTIMAS condições no Centro! Localizado na parte calma da Fernando Machado, esse imóvel permite um acesso privilegiado tanto à Orla quanto ao centro comercial, possuí mercados em volta além de excelentes rotas para transporte público.",
+  "imagens": [
+    "assets/images/imoveis/Fernando machado/1.JPG",
+    "assets/images/imoveis/Fernando machado/IMG_1359.JPG",
+    "assets/images/imoveis/Fernando machado/IMG_1360.JPG",
+    "assets/images/imoveis/Fernando machado/IMG_1361.JPG",
+    "assets/images/imoveis/Fernando machado/IMG_1362.JPG",
+    "assets/images/imoveis/Fernando machado/IMG_1363.JPG",
+    "assets/images/imoveis/Fernando machado/IMG_1365.JPG",
+    "assets/images/imoveis/Fernando machado/IMG_1366.JPG",
+    "assets/images/imoveis/Fernando machado/IMG_1367.JPG",
+    "assets/images/imoveis/Fernando machado/IMG_1368.JPG",
+    "assets/images/imoveis/Fernando machado/IMG_1369.JPG",
+    "assets/images/imoveis/Fernando machado/IMG_1370.JPG",
+    "assets/images/imoveis/Fernando machado/IMG_1378.JPG",
+    "assets/images/imoveis/Fernando machado/IMG_1379.JPG"
+  ],
+  "destaque": true,
+  "disponivel": true
+}

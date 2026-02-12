@@ -1,0 +1,53 @@
+{
+  "id": 1,
+  "nome": "Condomínio TOM",
+  "slug": "condominio-tom",
+  "endereco": {
+    "rua": "Rua Almirante Gonçalves",
+    "bairro": "Menino Deus",
+    "cidade": "Porto Alegre",
+    "estado": "RS"
+  },
+  "descricao": "Empreendimento moderno no coração do Menino Deus, com acabamento de primeira qualidade e localização privilegiada.",
+  "descricaoCompleta": "O Condomínio TOM é um empreendimento que une modernidade, conforto e localização privilegiada. Situado no bairro Menino Deus, você terá acesso fácil a comércios, restaurantes, escolas e transporte público. Com acabamento de primeira qualidade e áreas de lazer completas, este é o lugar ideal para sua família.",
+  "caracteristicas": {
+    "unidades": 48,
+    "torres": 1,
+    "andares": 12,
+    "elevadores": 2,
+    "status": "pronto-para-morar"
+  },
+  "lazer": [
+    "Piscina",
+    "Academia",
+    "Churrasqueira",
+    "Salão de festas",
+    "Espaço gourmet",
+    "Bicicletario",
+    "Segurança 24h"
+  ],
+  "diferenciais": [
+    "Localização privilegiada",
+    "Próximo ao transporte público",
+    "Área comercial na região",
+    "Acabamento premium",
+    "Infraestrutura completa"
+  ],
+  "imagens": [
+    "assets/images/empreendimentos/condominio-tom/1.jpg",
+    "assets/images/empreendimentos/condominio-tom/05.jpg",
+    "assets/images/empreendimentos/condominio-tom/07.jpg",
+    "assets/images/empreendimentos/condominio-tom/09.jpg",
+    "assets/images/empreendimentos/condominio-tom/11.jpg",
+    "assets/images/empreendimentos/condominio-tom/13.jpg",
+    "assets/images/empreendimentos/condominio-tom/15.jpg",
+    "assets/images/empreendimentos/condominio-tom/20.jpg",
+    "assets/images/empreendimentos/condominio-tom/academia1.jpeg",
+    "assets/images/empreendimentos/condominio-tom/academia2.jpeg",
+    "assets/images/empreendimentos/condominio-tom/piscina1.jpeg",
+    "assets/images/empreendimentos/condominio-tom/piscina2.jpeg"
+  ],
+  "destaque": true,
+  "disponivel": true,
+  "metaKeywords": "apartamento menino deus, condomínio porto alegre, tom"
+}

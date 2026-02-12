@@ -1,0 +1,71 @@
+{
+  "id": 3,
+  "nome": "Roca 815 Residences",
+  "slug": "roca-815-residences",
+  "endereco": {
+    "rua": "Rua Artur Rocha, 815",
+    "bairro": "Bela Vista",
+    "cidade": "Porto Alegre",
+    "estado": "RS"
+  },
+  "descricao": "Empreendimento exclusivo com apenas 11 apartamentos, certificação diamante de sustentabilidade e conceito de quiet luxury no coração da Bela Vista.",
+  "descricaoCompleta": "Localizado no coração do bairro Bela Vista, em Porto Alegre, o Roca 815 Residences surge como um marco de sofisticação e solidez. Fruto de uma parceria entre a AMX Property e a Mapa Incorporadora, o empreendimento teve seu nome inspirado na Rua Artur Rocha; o termo Roca significa rocha em espanhol, simbolizando a força e a durabilidade que definem o projeto. Com arquitetura assinada por Duda Kopper e interiores pela Butiá Arquitetura, o edifício incorpora o conceito de quiet luxury, priorizando materiais nobres e uma elegância discreta que transcende o tempo. A exclusividade é um dos pilares do Roca 815, que conta com apenas 11 apartamentos, sendo uma única unidade por andar para garantir total privacidade aos moradores. Os apartamentos tipo possuem 203 metros quadrados de área privativa, oferecendo três suítes (com opção para quatro), três vagas de garagem e depósito. Para quem busca ainda mais espaço, a unidade garden disponibiliza uma área privativa adicional de 47,82 metros quadrados. O compromisso com o meio ambiente é atestado pela Certificação Diamante de Sustentabilidade Ambiental, a mais alta classificação concedida pela Prefeitura de Porto Alegre.",
+  "caracteristicas": {
+    "unidades": 11,
+    "torres": 1,
+    "andares": 11,
+    "elevadores": 1,
+    "status": "em-construcao",
+    "areaTipo": 203,
+    "areaGarden": 47.82,
+    "suites": 3,
+    "vagas": 3
+  },
+  "lazer": [
+    "Piscina no rooftop",
+    "Fitness center Technogym",
+    "Salão de festas com cozinha auxiliar",
+    "Espaço kids",
+    "Rooftop com bar",
+    "Lounge externo com lareira",
+    "Bicicletário"
+  ],
+  "diferenciais": [
+    "Apenas 11 apartamentos - 1 por andar",
+    "Certificação Diamante de Sustentabilidade Ambiental",
+    "Conceito Quiet Luxury",
+    "Arquitetura por Duda Kopper",
+    "Interiores por Butiá Arquitetura",
+    "Piso aquecido nos banheiros",
+    "Vidros laminados e esquadrias amplas",
+    "Churrasqueira e lareira nos apartamentos",
+    "Sacadas no living e nas suítes",
+    "Fechaduras eletrônicas",
+    "Infraestrutura para carregadores de veículos elétricos",
+    "AMX Property e Mapa Incorporadora"
+  ],
+  "imagens": [
+    "assets/images/empreendimentos/find/rocca815/AMX_ArturRocha_Fachada_2025_FINAL.jpg",
+    "assets/images/empreendimentos/find/rocca815/AMX_ArturRocha_Fachada_Portico_FINAL.jpg",
+    "assets/images/empreendimentos/find/rocca815/AMX_Roca_Living1_FINAL.jpg",
+    "assets/images/empreendimentos/find/rocca815/AMX_Roca_Living2_FINAL.jpg",
+    "assets/images/empreendimentos/find/rocca815/AMX_Roca_SuiteMaster1_FINAL.jpg",
+    "assets/images/empreendimentos/find/rocca815/AMX_Roca_SuiteMaster2_FINAL.jpg",
+    "assets/images/empreendimentos/find/rocca815/AMX_Roca_DormJovem_FINAL.jpg",
+    "assets/images/empreendimentos/find/rocca815/AMX_Roca_DormInfantil_FINAL.jpg",
+    "assets/images/empreendimentos/find/rocca815/AMX_Roca_ChurrasAdega1_FINAL.jpg",
+    "assets/images/empreendimentos/find/rocca815/AMX_Roca_Piscina01_FINAL.jpg",
+    "assets/images/empreendimentos/find/rocca815/AMX_Roca_Piscina02_FINAL.jpg",
+    "assets/images/empreendimentos/find/rocca815/AMX_Roca_Piscina03_FINAL.jpg",
+    "assets/images/empreendimentos/find/rocca815/AMX_Roca_Salao01_FINAL.jpg",
+    "assets/images/empreendimentos/find/rocca815/AMX_Roca_Salao02_FINAL.jpg",
+    "assets/images/empreendimentos/find/rocca815/AMX_Roca_Academia_FINAL.jpg",
+    "assets/images/empreendimentos/find/rocca815/AMX_Roca_Kids_FINAL.jpg",
+    "assets/images/empreendimentos/find/rocca815/AMX_Roca_Hall_FINAL.jpg",
+    "assets/images/empreendimentos/find/rocca815/AMX_Roca_Garagem_FINAL.jpg",
+    "assets/images/empreendimentos/find/rocca815/AMX_Roca_Bicicletario_FINAL.jpg"
+  ],
+  "destaque": true,
+  "disponivel": true,
+  "metaKeywords": "roca 815, bela vista porto alegre, amx property, mapa incorporadora, quiet luxury"
+}

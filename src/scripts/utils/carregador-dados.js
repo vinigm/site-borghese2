@@ -3,12 +3,14 @@
    ======================================== */
 
 /**
- * Classe para gerenciar carregamento de dados
+ * Classe para gerenciar carregamento de dados (estrutura modular)
  */
 class CarregadorDados {
   constructor() {
     this.cache = new Map();
     this.cacheTimeout = 5 * 60 * 1000; // 5 minutos
+    this.manifestoCarregado = false;
+    this.manifesto = null;
   }
 
   resolverCaminhos(caminho) {
@@ -75,12 +77,50 @@ class CarregadorDados {
   }
 
   /**
-   * Carrega todos os imóveis
+   * Carrega o manifesto com lista de arquivos
+   * @returns {Promise<Object>} - Manifesto de arquivos
+   */
+  async carregarManifesto() {
+    if (this.manifestoCarregado && this.manifesto) {
+      return this.manifesto;
+    }
+    
+    this.manifesto = await this.carregarJSON('src/data/config/manifest.json');
+    this.manifestoCarregado = true;
+    return this.manifesto;
+  }
+
+  /**
+   * Carrega todos os imóveis (de múltiplos arquivos)
    * @returns {Promise<Array>} - Array de imóveis
    */
   async carregarImoveis() {
-    const dados = await this.carregarJSON('src/data/imoveis.json');
-    return dados.imoveis || [];
+    // Verifica cache geral
+    const cacheKey = 'todos_imoveis';
+    if (this.cache.has(cacheKey)) {
+      const dadosCache = this.cache.get(cacheKey);
+      const agora = Date.now();
+      if (agora - dadosCache.timestamp < this.cacheTimeout) {
+        console.log('📦 Todos os imóveis carregados do cache');
+        return dadosCache.data;
+      }
+    }
+
+    const manifesto = await this.carregarManifesto();
+    const promessas = manifesto.imoveis.map(caminho => 
+      this.carregarJSON(caminho, false)
+    );
+    
+    const imoveis = await Promise.all(promessas);
+    
+    // Armazena no cache geral
+    this.cache.set(cacheKey, {
+      data: imoveis,
+      timestamp: Date.now()
+    });
+    
+    console.log(`✅ ${imoveis.length} imóveis carregados de arquivos individuais`);
+    return imoveis;
   }
 
   /**
@@ -219,8 +259,8 @@ class CarregadorDados {
    * @returns {Promise<Object>} - Configurações de filtros
    */
   async carregarConfigFiltros() {
-    const dados = await this.carregarJSON('src/data/imoveis.json');
-    return dados.filtros || {};
+    const dados = await this.carregarJSON('src/data/config/filtros.json');
+    return dados || {};
   }
 
   /**
@@ -258,12 +298,36 @@ class CarregadorDados {
   }
 
   /**
-   * Carrega todos os empreendimentos
+   * Carrega todos os empreendimentos (de múltiplos arquivos)
    * @returns {Promise<Array>} - Array de empreendimentos
    */
   async carregarEmpreendimentos() {
-    const dados = await this.carregarJSON('src/data/empreendimentos.json');
-    return dados.empreendimentos || [];
+    // Verifica cache geral
+    const cacheKey = 'todos_empreendimentos';
+    if (this.cache.has(cacheKey)) {
+      const dadosCache = this.cache.get(cacheKey);
+      const agora = Date.now();
+      if (agora - dadosCache.timestamp < this.cacheTimeout) {
+        console.log('📦 Todos os empreendimentos carregados do cache');
+        return dadosCache.data;
+      }
+    }
+
+    const manifesto = await this.carregarManifesto();
+    const promessas = manifesto.empreendimentos.map(caminho => 
+      this.carregarJSON(caminho, false)
+    );
+    
+    const empreendimentos = await Promise.all(promessas);
+    
+    // Armazena no cache geral
+    this.cache.set(cacheKey, {
+      data: empreendimentos,
+      timestamp: Date.now()
+    });
+    
+    console.log(`✅ ${empreendimentos.length} empreendimentos carregados de arquivos individuais`);
+    return empreendimentos;
   }
 
   /**

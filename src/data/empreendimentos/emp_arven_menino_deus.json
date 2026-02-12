@@ -1,0 +1,51 @@
+{
+  "id": 2,
+  "nome": "Arven",
+  "slug": "arven",
+  "endereco": {
+    "rua": "Rua Almirante Gonçalves",
+    "bairro": "Menino Deus",
+    "cidade": "Porto Alegre",
+    "estado": "RS"
+  },
+  "descricao": "O ARVEN une tradição e modernidade com arquitetura imponente no Menino Deus, oferecendo localização privilegiada e lazer completo.",
+  "descricaoCompleta": "O ARVEN é um empreendimento que marca um novo momento de inovação no mercado imobiliário, unindo tradição e modernidade em um projeto de arquitetura imponente e atemporal. Localizado na Rua Almirante Gonçalves, no coração do bairro Menino Deus, o edifício oferece uma localização privilegiada que preserva a essência residencial enquanto garante acesso imediato a conveniências como shoppings, parques e gastronomia especializada. O projeto conta com apartamentos de 2 e 3 dormitórios, além de opções de coberturas duplex, todos com plantas otimizadas, sacadas envidraçadas e acabamentos de alto padrão. A infraestrutura de lazer é completa e pensada para toda a família, incluindo piscina com deck molhado, academia equipada, salão de festas, gourmeteria, brinquedoteca e um exclusivo lounge externo com lareira. Para quem busca equilibrar vida pessoal e profissional, o empreendimento disponibiliza um Meeting Place equipado para reuniões e home office. Com diferenciais que vão desde a segurança com guarita blindada até detalhes estéticos em ACM amadeirado na fachada, o ARVEN foi desenhado para ser o cenário ideal de novas narrativas de vida, priorizando o conforto e o bem-estar em cada detalhe.",
+  "caracteristicas": {
+    "unidades": 52,
+    "torres": 1,
+    "andares": 17,
+    "elevadores": 2,
+    "status": "pronto-para-morar"
+  },
+  "lazer": [
+    "Academia",
+    "Churrasqueira",
+    "Salão de festas",
+    "Espaço gourmet",
+    "Bicicletario",
+    "Segurança 24h",
+    "Brinquedoteca"
+  ],
+  "diferenciais": [
+    "Meeting Place para home office",
+    "Sacadas envidraçadas",
+    "Acabamento de alto padrão",
+    "Arquitetura imponente e atemporal"
+  ],
+  "imagens": [
+    "assets/images/empreendimentos/arven/1.jpg",
+    "assets/images/empreendimentos/arven/nmlss_dimak_arven_jul25-0997.jpg",
+    "assets/images/empreendimentos/arven/nmlss_dimak_arven_jul25-2893.jpg",
+    "assets/images/empreendimentos/arven/nmlss_dimak_arven_jul25-2895.jpg",
+    "assets/images/empreendimentos/arven/nmlss_dimak_arven_jul25-2912.jpg",
+    "assets/images/empreendimentos/arven/nmlss_dimak_arven_jul25-2938.jpg",
+    "assets/images/empreendimentos/arven/nmlss_dimak_arven_jul25-2941.jpg",
+    "assets/images/empreendimentos/arven/nmlss_dimak_arven_jul25-2968.jpg",
+    "assets/images/empreendimentos/arven/nmlss_dimak_arven_jul25-2973.jpg",
+    "assets/images/empreendimentos/arven/nmlss_dimak_arven_jul25-2975.jpg",
+    "assets/images/empreendimentos/arven/nmlss_dimak_arven_jul25-3055.jpg"
+  ],
+  "destaque": true,
+  "disponivel": true,
+  "metaKeywords": "arven menino deus, empreendimento porto alegre, dimak arven"
+}
