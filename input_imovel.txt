@@ -1,4 +1,5 @@
 Vamos adicionar mais um imóvel no nosso sistema
+Lembrando que temos que criar um novo código individual para o imóvel conforme padrão de nome ja estabelecido
 
 As fotos do imóvel ja foram colocadas na pasta:
 

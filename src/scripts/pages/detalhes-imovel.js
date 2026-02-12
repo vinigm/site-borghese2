@@ -227,6 +227,24 @@ function configurarGaleria(imagens, titulo) {
   });
 }
 
+function configurarScrollMiniaturas() {
+  const btnEsq = document.getElementById('miniaturas-scroll-esq');
+  const btnDir = document.getElementById('miniaturas-scroll-dir');
+  const scroll = document.querySelector('.detalhes-imovel__miniaturas-scroll');
+
+  if (!btnEsq || !btnDir || !scroll) return;
+
+  const scrollAmount = 200;
+
+  btnEsq.addEventListener('click', () => {
+    scroll.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+  });
+
+  btnDir.addEventListener('click', () => {
+    scroll.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+  });
+}
+
 async function carregarDetalhes() {
   const params = new URLSearchParams(window.location.search);
   const id = params.get('id');
@@ -262,6 +280,21 @@ async function carregarDetalhes() {
     const linkWhatsApp = gerarLinkWhatsApp('51993016930', mensagemWhatsApp);
 
     container.innerHTML = `
+      <!-- Faixa de miniaturas no topo (desktop) -->
+      <div class="detalhes-imovel__miniaturas-topo">
+        <button class="detalhes-imovel__miniaturas-seta detalhes-imovel__miniaturas-seta--esq" id="miniaturas-scroll-esq">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="15 18 9 12 15 6"></polyline>
+          </svg>
+        </button>
+        <div class="detalhes-imovel__miniaturas-scroll" id="miniaturas"></div>
+        <button class="detalhes-imovel__miniaturas-seta detalhes-imovel__miniaturas-seta--dir" id="miniaturas-scroll-dir">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="9 18 15 12 9 6"></polyline>
+          </svg>
+        </button>
+      </div>
+
       <div class="detalhes-imovel__layout">
         <div class="detalhes-imovel__galeria">
           <div class="detalhes-imovel__imagem-principal">
@@ -279,7 +312,6 @@ async function carregarDetalhes() {
               </button>
             ` : ''}
           </div>
-          <div class="detalhes-imovel__miniaturas" id="miniaturas"></div>
         </div>
 
         <div class="detalhes-imovel__info">
@@ -306,6 +338,7 @@ async function carregarDetalhes() {
     `;
 
     configurarGaleria(imovel.imagens || [], imovel.titulo);
+    configurarScrollMiniaturas();
   } catch (erro) {
     console.error('Erro ao carregar detalhes do imovel:', erro);
     if (window.location.protocol === 'file:') {
