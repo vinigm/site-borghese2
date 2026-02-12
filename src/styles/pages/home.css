@@ -284,6 +284,25 @@
   border-top: 1px solid var(--cor-borda);
 }
 
+.card-empreendimento__acao-desktop {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: var(--espacamento-sm);
+  padding: 6px 12px;
+  border-radius: 14px;
+  background: rgba(37, 99, 235, 0.85);
+  color: var(--cor-fundo);
+  text-decoration: none;
+  font-size: 12px;
+  font-weight: var(--font-medium);
+  transition: all var(--transicao-rapida);
+}
+
+.card-empreendimento__acao-desktop:hover {
+  background: rgba(30, 64, 175, 0.95);
+}
+
 .card-empreendimento__info-desktop {
   font-size: var(--texto-sm);
   color: var(--cor-texto-secundario);
@@ -603,6 +622,10 @@
 
   .card-empreendimento__info-mobile {
     display: block !important;
+  }
+
+  .card-empreendimento__acao-desktop {
+    display: none !important;
   }
 
   /* === BOTÕES OVERLAY MOBILE === */
