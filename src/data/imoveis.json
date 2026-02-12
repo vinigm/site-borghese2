@@ -168,7 +168,7 @@
         "assets/images/imoveis/3/IMG_1378.JPG",
         "assets/images/imoveis/3/IMG_1379.JPG"
       ],
-      "destaque": false,
+      "destaque": true,
       "disponivel": true
     }
   ],
