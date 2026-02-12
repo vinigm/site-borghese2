@@ -138,9 +138,9 @@ class RenderizadorImoveis {
     };
 
     const labels = {
-      quartos: `${valor} ${valor === 1 ? 'quarto' : 'quartos'}`,
-      banheiros: `${valor} ${valor === 1 ? 'banheiro' : 'banheiros'}`,
-      vagas: `${valor} ${valor === 1 ? 'vaga' : 'vagas'}`,
+      quartos: `${valor}&nbsp;${valor === 1 ? 'quarto' : 'quartos'}`,
+      banheiros: `${valor}&nbsp;${valor === 1 ? 'banheiro' : 'banheiros'}`,
+      vagas: `${valor}&nbsp;${valor === 1 ? 'vaga' : 'vagas'}`,
       area: `${valor}m²`
     };
 

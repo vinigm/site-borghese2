@@ -208,7 +208,9 @@
 /* === CARACTERÍSTICAS === */
 .card-imovel__caracteristicas {
   display: flex;
+  flex-wrap: nowrap;
   gap: var(--espacamento-lg);
+  justify-content: space-between;
   padding-top: var(--espacamento-md);
   margin-top: auto;
   border-top: 1px solid var(--cor-borda);
@@ -220,6 +222,7 @@
   gap: var(--espacamento-xs);
   color: var(--cor-texto-secundario);
   font-size: var(--texto-sm);
+  white-space: nowrap;
 }
 
 .card-imovel__caracteristica svg,
