@@ -36,6 +36,33 @@ function criarLightbox() {
   lightbox.querySelector('.detalhes-imovel__lightbox-seta--esq').addEventListener('click', () => trocarLightbox(-1));
   lightbox.querySelector('.detalhes-imovel__lightbox-seta--dir').addEventListener('click', () => trocarLightbox(1));
 
+  const imagemLightbox = lightbox.querySelector('.detalhes-imovel__lightbox-imagem');
+  let touchStartX = 0;
+  let touchEndX = 0;
+
+  imagemLightbox.addEventListener('touchstart', (e) => {
+    touchStartX = e.changedTouches[0].clientX;
+    touchEndX = touchStartX;
+  }, { passive: false });
+
+  imagemLightbox.addEventListener('touchmove', (e) => {
+    touchEndX = e.changedTouches[0].clientX;
+    e.preventDefault();
+  }, { passive: false });
+
+  imagemLightbox.addEventListener('touchend', () => {
+    const deltaX = touchEndX - touchStartX;
+    const limiarSwipe = 40;
+
+    if (Math.abs(deltaX) < limiarSwipe) return;
+
+    if (deltaX < 0) {
+      trocarLightbox(1);
+    } else {
+      trocarLightbox(-1);
+    }
+  }, { passive: false });
+
   document.addEventListener('keydown', (e) => {
     if (!lightbox.classList.contains('ativo')) return;
     if (e.key === 'Escape') fecharLightbox();
@@ -51,6 +78,7 @@ function abrirLightbox(indice) {
   atualizarLightbox();
   lightbox.classList.add('ativo');
   document.body.style.overflow = 'hidden';
+  document.body.classList.add('lightbox-aberto');
 }
 
 function fecharLightbox() {
@@ -58,6 +86,7 @@ function fecharLightbox() {
   if (!lightbox) return;
   lightbox.classList.remove('ativo');
   document.body.style.overflow = '';
+  document.body.classList.remove('lightbox-aberto');
 }
 
 function trocarLightbox(delta) {
