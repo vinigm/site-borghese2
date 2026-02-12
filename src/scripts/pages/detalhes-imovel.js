@@ -131,7 +131,7 @@ function criarCaracteristicas(imovel) {
   let html = `
     <div class="detalhes-imovel__caracteristica"><strong>${quartos}</strong> quartos</div>
     <div class="detalhes-imovel__caracteristica"><strong>${banheiros}</strong> banheiros</div>
-    <div class="detalhes-imovel__caracteristica"><strong>${vagas}</strong> vagas</div>
+    ${vagas > 0 ? `<div class="detalhes-imovel__caracteristica"><strong>${vagas}</strong> vagas</div>` : ''}
     <div class="detalhes-imovel__caracteristica"><strong>${area}m²</strong> area</div>
   `;
   

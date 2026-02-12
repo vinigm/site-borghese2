@@ -103,7 +103,7 @@ class RenderizadorImoveis {
           <div class="card-imovel__caracteristicas">
             ${this.renderizarCaracteristica('quartos', imovel.caracteristicas.quartos)}
             ${this.renderizarCaracteristica('banheiros', imovel.caracteristicas.banheiros)}
-            ${this.renderizarCaracteristica('vagas', imovel.caracteristicas.vagas)}
+            ${imovel.caracteristicas.vagas > 0 ? this.renderizarCaracteristica('vagas', imovel.caracteristicas.vagas) : ''}
             ${this.renderizarCaracteristica('area', imovel.caracteristicas.area)}
           </div>
         </div>
