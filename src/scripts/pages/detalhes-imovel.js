@@ -118,6 +118,8 @@ function renderizarErro(titulo, mensagem) {
 
 function criarBadges(imovel) {
   const badges = [];
+  // Código do imóvel - sempre primeiro
+  badges.push(`<span class="badge badge--codigo">Código do imóvel: ${imovel.id}</span>`);
   if (imovel.destaque) {
     badges.push('<span class="badge badge--alerta">Destaque</span>');
   }
