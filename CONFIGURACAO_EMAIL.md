@@ -2,7 +2,7 @@
 
 ## ✅ Email Configurado
 
-**Email de destino:** borgheseimoveis@gmail.com
+**Email de destino:** contato@borghese.com.br
 
 ## 🚀 Como Funciona
 
@@ -12,7 +12,7 @@ O site agora usa **FormSubmit**, um serviço gratuito que envia os formulários 
 
 1. ✅ Formulário de contato atualizado
 2. ✅ Integração com FormSubmit
-3. ✅ Email de destino: borgheseimoveis@gmail.com
+3. ✅ Email de destino: contato@borghese.com.br
 4. ✅ Captcha desabilitado (pode ativar depois)
 5. ✅ Template de email limpo (formato tabela)
 
@@ -20,7 +20,7 @@ O site agora usa **FormSubmit**, um serviço gratuito que envia os formulários 
 
 ### **Na primeira vez que alguém enviar o formulário:**
 
-1. O FormSubmit vai enviar um **email de confirmação** para: **borgheseimoveis@gmail.com**
+1. O FormSubmit vai enviar um **email de confirmação** para: **contato@borghese.com.br**
 2. Você PRECISA **clicar no link de ativação** nesse email
 3. Só depois disso os formulários começarão a funcionar
 
@@ -73,7 +73,7 @@ Quando criar o email com domínio próprio (ex: contato@borghese.com.br):
 1. Abra: `src/scripts/utils/carregador-dados.js`
 2. Encontre a linha:
    ```javascript
-   const response = await fetch('https://formsubmit.co/borgheseimoveis@gmail.com', {
+   const response = await fetch('https://formsubmit.co/contato@borghese.com.br', {
    ```
 3. Troque para:
    ```javascript
@@ -86,7 +86,7 @@ Quando criar o email com domínio próprio (ex: contato@borghese.com.br):
 1. Abra o site em: `pages/contato.html`
 2. Preencha o formulário
 3. Clique em "Enviar Mensagem"
-4. **Primeira vez:** Verifique a caixa de entrada de borgheseimoveis@gmail.com
+4. **Primeira vez:** Verifique a caixa de entrada de contato@borghese.com.br
 5. Clique no link de ativação
 6. Teste novamente - agora deve funcionar!
 
@@ -108,7 +108,7 @@ Quando criar o email com domínio próprio (ex: contato@borghese.com.br):
 
 ### Emails não chegam
 
-1. **Verificar spam/lixeira** em borgheseimoveis@gmail.com
+1. **Verificar spam/lixeira** em contato@borghese.com.br
 2. **Confirmar email** no primeiro uso
 3. Testar com outro email se necessário
 

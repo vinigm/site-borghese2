@@ -295,7 +295,7 @@ class CarregadorDados {
   async enviarContato(dados) {
     try {
       // FormSubmit - Serviço gratuito de envio de emails
-      // Email configurado: borgheseimoveis@gmail.com
+      // Email configurado: contato@borghese.com.br
       const formData = new FormData();
       
       formData.append('name', dados.nome);
@@ -306,7 +306,7 @@ class CarregadorDados {
       formData.append('_captcha', 'false'); // Desabilita captcha
       formData.append('_template', 'table'); // Template limpo
       
-      const response = await fetch('https://formsubmit.co/borgheseimoveis@gmail.com', {
+      const response = await fetch('https://formsubmit.co/contato@borghese.com.br', {
         method: 'POST',
         body: formData,
         headers: {
