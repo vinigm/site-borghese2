@@ -128,6 +128,44 @@
       "disponivel": true
     },
     {
+      "id": 34,
+      "empreendimentoId": null,
+      "empreendimento": "Edificio Silvana",
+      "unidade": "31",
+      "torre": null,
+      "titulo": "Apartamento 2D em Santa Cecília",
+      "tipo": "apartamento",
+      "transacao": "venda",
+      "preco": 340000,
+      "endereco": {
+        "rua": "Rua Jacinto Gomes, 119",
+        "bairro": "Santa Cecília",
+        "cidade": "Porto Alegre",
+        "estado": "RS"
+      },
+      "caracteristicas": {
+        "quartos": 2,
+        "banheiros": 2,
+        "vagas": 1,
+        "area": 80
+      },
+      "descricao": "Apartamento bem localizado em Santa Cecília, com ótima infraestrutura e fácil acesso ao centro da cidade.",
+      "imagens": [
+        "assets/images/imoveis/Apto ana gomes jacinto gomes/1.JPG",
+        "assets/images/imoveis/Apto ana gomes jacinto gomes/IMG_1381.JPG",
+        "assets/images/imoveis/Apto ana gomes jacinto gomes/IMG_1382.JPG",
+        "assets/images/imoveis/Apto ana gomes jacinto gomes/IMG_1383.JPG",
+        "assets/images/imoveis/Apto ana gomes jacinto gomes/IMG_1384.JPG",
+        "assets/images/imoveis/Apto ana gomes jacinto gomes/IMG_1385.JPG",
+        "assets/images/imoveis/Apto ana gomes jacinto gomes/IMG_1386.JPG",
+        "assets/images/imoveis/Apto ana gomes jacinto gomes/IMG_1388.JPG",
+        "assets/images/imoveis/Apto ana gomes jacinto gomes/IMG_1389.JPG",
+        "assets/images/imoveis/Apto ana gomes jacinto gomes/IMG_1390.JPG"
+      ],
+      "destaque": false,
+      "disponivel": true
+    },
+    {
       "id": 52,
       "empreendimentoId": null,
       "empreendimento": "Edificio Dom Mauricio",
