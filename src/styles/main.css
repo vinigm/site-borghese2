@@ -183,13 +183,6 @@
   color: var(--cor-fundo);
 }
 
-.badge--codigo {
-  background-color: #fbbf24;
-  color: #78350f;
-  font-size: 0.85rem;
-  font-weight: 500;
-}
-
 .badge--perigo {
   background-color: #ef4444;
   color: var(--cor-fundo);

@@ -118,8 +118,6 @@ function renderizarErro(titulo, mensagem) {
 
 function criarBadges(imovel) {
   const badges = [];
-  // Código do imóvel - sempre primeiro
-  badges.push(`<span class="badge badge--codigo">Código do imóvel: ${imovel.id}</span>`);
   if (imovel.destaque) {
     badges.push('<span class="badge badge--alerta">Destaque</span>');
   }
@@ -291,6 +289,7 @@ async function carregarDetalhes() {
           <h2 class="detalhes-imovel__titulo">${imovel.titulo}</h2>
           <div class="detalhes-imovel__preco">${precoFormatado}</div>
           <div class="detalhes-imovel__endereco">${enderecoFormatado}</div>
+          <div class="detalhes-imovel__codigo">Código do imóvel: ${imovel.id}</div>
 
           <div class="detalhes-imovel__caracteristicas">
             ${criarCaracteristicas(imovel)}

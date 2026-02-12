@@ -30,6 +30,17 @@
   padding: var(--espacamento-lg);
 }
 
+.detalhes-imovel__codigo {
+  display: inline-block;
+  font-size: 0.75rem;
+  color: #1e40af;
+  background-color: rgba(59, 130, 246, 0.1);
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  margin-top: 0.25rem;
+  font-weight: 500;
+}
+
 .detalhes-imovel__imagem-principal {
   width: 100%;
   border-radius: var(--borda-radius-md);

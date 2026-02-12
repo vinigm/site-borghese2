@@ -86,6 +86,12 @@ class SistemaFiltros {
     const formData = new FormData(this.formulario);
     const filtros = {};
 
+    // Código do imóvel
+    const codigo = formData.get('codigo');
+    if (codigo && codigo.trim() !== '') {
+      filtros.codigo = codigo.trim();
+    }
+
     // Tipo de imóvel
     const tipo = formData.get('tipo');
     if (tipo && tipo !== 'todos') {

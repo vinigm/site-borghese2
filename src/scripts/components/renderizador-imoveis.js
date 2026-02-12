@@ -62,6 +62,7 @@ class RenderizadorImoveis {
             </svg>
           </button>
           ` : ''}
+          <div class="card-imovel__codigo">Código: ${imovel.id}</div>
           <div class="card-imovel__badges">
             ${badges.join('')}
           </div>

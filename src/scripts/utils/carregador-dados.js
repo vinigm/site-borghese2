@@ -153,6 +153,13 @@ class CarregadorDados {
     // Filtra apenas disponíveis
     imoveis = imoveis.filter(imovel => imovel.disponivel);
 
+    // Filtro por código do imóvel
+    if (filtros.codigo) {
+      imoveis = imoveis.filter(imovel => 
+        imovel.id.toString().includes(filtros.codigo)
+      );
+    }
+
     // Aplica filtros
     if (filtros.tipo && filtros.tipo !== 'todos') {
       imoveis = imoveis.filter(imovel => imovel.tipo === filtros.tipo);

@@ -48,6 +48,21 @@
   flex-wrap: wrap;
 }
 
+/* === CÓDIGO DO IMÓVEL === */
+.card-imovel__codigo {
+  position: absolute;
+  bottom: var(--espacamento-md);
+  left: var(--espacamento-md);
+  font-size: 0.7rem;
+  color: #ffffff;
+  background-color: rgba(59, 130, 246, 0.75);
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  font-weight: 500;
+  backdrop-filter: blur(4px);
+  z-index: 2;
+}
+
 .card-imovel__badge {
   padding: var(--espacamento-xs) var(--espacamento-sm);
   border-radius: var(--borda-radius-sm);

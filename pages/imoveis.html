@@ -93,6 +93,21 @@
           </h2>
 
           <form class="filtros__form" id="form-filtros">
+            <!-- Código do Imóvel -->
+            <div class="filtros__campo">
+              <label class="filtros__label" for="codigo">
+                <span>🔢</span>
+                Código do Imóvel
+              </label>
+              <input 
+                type="text" 
+                class="filtros__input" 
+                id="codigo" 
+                name="codigo" 
+                placeholder="Digite o código"
+              >
+            </div>
+
             <!-- Tipo de Transação -->
             <div class="filtros__campo">
               <label class="filtros__label" for="transacao">
@@ -794,6 +809,18 @@
           timeoutBusca = setTimeout(() => {
             sistemaFiltros.aplicarFiltros();
           }, 600);
+        });
+      }
+
+      // Campo de código também aplica automaticamente
+      const campoCodigo = document.querySelector('#form-filtros input[name="codigo"]');
+      if (campoCodigo) {
+        let timeoutCodigo;
+        campoCodigo.addEventListener('input', () => {
+          clearTimeout(timeoutCodigo);
+          timeoutCodigo = setTimeout(() => {
+            sistemaFiltros.aplicarFiltros();
+          }, 400);
         });
       }
 
