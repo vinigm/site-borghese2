@@ -336,14 +336,14 @@
   }
 
   .card-imovel__caracteristica {
-    font-size: var(--texto-xs);
-    gap: 4px;
+    font-size: 11px !important;
+    gap: 3px;
   }
 
   .card-imovel__caracteristica svg,
   .card-imovel__caracteristica i {
-    width: 14px;
-    height: 14px;
+    width: 12px;
+    height: 12px;
   }
 
   .card-imovel__footer {

@@ -87,6 +87,9 @@
           <h2 class="filtros__titulo">
             <span>🔍</span>
             Filtrar Imóveis
+            <button type="button" class="filtros__fechar-mobile visivel-mobile" aria-label="Fechar filtros">
+              ✕ Fechar
+            </button>
           </h2>
 
           <form class="filtros__form" id="form-filtros">
@@ -384,9 +387,14 @@
         <!-- Toolbar -->
         <div class="imoveis-toolbar">
           <div class="imoveis-toolbar__info">
-            <button class="botao botao--outline botao--pequeno botao-filtros-mobile visivel-mobile">
-              🔍 Filtros
-            </button>
+            <div class="imoveis-toolbar__botoes-mobile visivel-mobile">
+              <button class="botao botao--outline botao--pequeno botao-filtros-mobile visivel-mobile">
+                🔍 Todos os filtros
+              </button>
+              <button class="botao botao--outline botao--pequeno botao-limpar-mobile visivel-mobile">
+                🔄 Limpar filtros
+              </button>
+            </div>
             <div class="imoveis-toolbar__contador" data-contador-imoveis>
               Carregando...
             </div>
@@ -413,6 +421,50 @@
           </div>
         </div>
 
+        <div class="filtros-rapidos-mobile visivel-mobile">
+          <h3 class="filtros-rapidos-mobile__titulo">Filtros Rápidos</h3>
+
+          <div class="filtros-rapidos-mobile__campo">
+            <label for="filtro-rapido-preco-min">Preço mínimo</label>
+            <input
+              type="number"
+              id="filtro-rapido-preco-min"
+              class="filtros-rapidos-mobile__input"
+              placeholder="Ex: 300000"
+              min="0"
+              step="10000"
+            />
+          </div>
+
+          <div class="filtros-rapidos-mobile__campo">
+            <label for="filtro-rapido-preco-max">Preço máximo</label>
+            <input
+              type="number"
+              id="filtro-rapido-preco-max"
+              class="filtros-rapidos-mobile__input"
+              placeholder="Ex: 800000"
+              min="0"
+              step="10000"
+            />
+          </div>
+
+          <div class="filtros-rapidos-mobile__campo">
+            <label for="filtro-rapido-quartos">Quartos</label>
+            <select id="filtro-rapido-quartos" class="filtros-rapidos-mobile__input">
+              <option value="">Qualquer</option>
+              <option value="1">1+</option>
+              <option value="2">2+</option>
+              <option value="3">3+</option>
+              <option value="4">4+</option>
+            </select>
+          </div>
+
+          <div class="filtros-rapidos-mobile__campo">
+            <label>Bairro (múltiplo)</label>
+            <div id="filtro-rapido-bairros-lista" class="filtros-rapidos-mobile__bairros-lista"></div>
+          </div>
+        </div>
+
         <!-- Grid de Imóveis -->
         <div class="grid-imoveis" id="lista-imoveis">
           <!-- Imóveis serão carregados via JavaScript -->
@@ -430,25 +482,28 @@
     <div class="footer__container">
       <div class="footer__conteudo">
         <div class="footer__secao footer__sobre">
-          <h3 class="footer__logo">🏠 Borghese</h3>
           <p>
             A Borghese é sua parceira ideal na busca pelo imóvel dos sonhos.
           </p>
           <div class="footer__redes-sociais">
-            <a href="#" class="footer__rede-social" aria-label="Facebook">📘</a>
-            <a href="#" class="footer__rede-social" aria-label="Instagram">📷</a>
-            <a href="#" class="footer__rede-social" aria-label="LinkedIn">💼</a>
-            <a href="#" class="footer__rede-social" aria-label="YouTube">▶️</a>
+            <a href="https://www.instagram.com/borgheseimoveis" target="_blank" rel="noopener" class="footer__rede-social footer__rede-social--instagram" aria-label="Instagram Borghese Imóveis">
+              <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                <path d="M16 11.37a4 4 0 1 1-2.63-2.63A4 4 0 0 1 16 11.37z"></path>
+                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+              </svg>
+              Instagram
+            </a>
           </div>
         </div>
 
         <div class="footer__secao">
           <h3>Links Rápidos</h3>
           <nav class="footer__links-lista">
-            <a href="../index.html">→ Início</a>
-            <a href="imoveis.html">→ Imóveis</a>
-            <a href="sobre.html">→ Sobre Nós</a>
-            <a href="contato.html">→ Contato</a>
+            <a href="../index.html">Início</a>
+            <a href="imoveis.html">Imóveis</a>
+            <a href="sobre.html">Sobre Nós</a>
+            <a href="contato.html">Contato</a>
           </nav>
         </div>
 
@@ -583,9 +638,126 @@
         }
       }
 
+      // Filtros rápidos (mobile)
+      const filtroRapidoPrecoMin = document.getElementById('filtro-rapido-preco-min');
+      const filtroRapidoPrecoMax = document.getElementById('filtro-rapido-preco-max');
+      const filtroRapidoQuartos = document.getElementById('filtro-rapido-quartos');
+      const filtroRapidoBairrosLista = document.getElementById('filtro-rapido-bairros-lista');
+      const campoPrecoMin = document.getElementById('precoMin');
+      const campoPrecoMax = document.getElementById('precoMax');
+      const campoQuartos = document.getElementById('quartos');
+
+      function atualizarFiltroRapidoBairros() {
+        if (!filtroRapidoBairrosLista) return;
+
+        const bairrosSelecionados = new Set(
+          Array.from(checkboxesBairros)
+            .filter(cb => cb.checked)
+            .map(cb => cb.value)
+        );
+
+        filtroRapidoBairrosLista.querySelectorAll('input[type="checkbox"]').forEach(cb => {
+          cb.checked = bairrosSelecionados.has(cb.value);
+        });
+      }
+
+      if (filtroRapidoBairrosLista) {
+        const bairrosUnicos = [...new Set(Array.from(checkboxesBairros).map(cb => cb.value))]
+          .sort((a, b) => a.localeCompare(b));
+
+        bairrosUnicos.forEach(bairro => {
+          const item = document.createElement('label');
+          item.className = 'filtros-rapidos-mobile__checkbox-item';
+          item.innerHTML = `
+            <input type="checkbox" value="${bairro}" />
+            <span>${bairro}</span>
+          `;
+          filtroRapidoBairrosLista.appendChild(item);
+        });
+
+        filtroRapidoBairrosLista.addEventListener('change', (event) => {
+          const target = event.target;
+          if (!(target instanceof HTMLInputElement) || target.type !== 'checkbox') return;
+
+          const selecionadosRapidos = new Set(
+            Array.from(filtroRapidoBairrosLista.querySelectorAll('input[type="checkbox"]:checked'))
+              .map(cb => cb.value)
+          );
+
+          checkboxesBairros.forEach(cb => {
+            cb.checked = selecionadosRapidos.has(cb.value);
+          });
+
+          atualizarTextoBairros();
+          sistemaFiltros.aplicarFiltros();
+        });
+      }
+
+      if (filtroRapidoPrecoMin && campoPrecoMin) {
+        filtroRapidoPrecoMin.value = campoPrecoMin.value || '';
+      }
+
+      if (filtroRapidoPrecoMax && campoPrecoMax) {
+        filtroRapidoPrecoMax.value = campoPrecoMax.value || '';
+      }
+
+      if (filtroRapidoQuartos && campoQuartos) {
+        filtroRapidoQuartos.value = campoQuartos.value || '';
+      }
+
+      atualizarFiltroRapidoBairros();
+
+      let timeoutFiltrosRapidos;
+
+      if (filtroRapidoPrecoMin && campoPrecoMin) {
+        filtroRapidoPrecoMin.addEventListener('input', () => {
+          campoPrecoMin.value = filtroRapidoPrecoMin.value;
+          clearTimeout(timeoutFiltrosRapidos);
+          timeoutFiltrosRapidos = setTimeout(() => {
+            sistemaFiltros.aplicarFiltros();
+          }, 500);
+        });
+
+        campoPrecoMin.addEventListener('input', () => {
+          if (filtroRapidoPrecoMin.value !== campoPrecoMin.value) {
+            filtroRapidoPrecoMin.value = campoPrecoMin.value;
+          }
+        });
+      }
+
+      if (filtroRapidoPrecoMax && campoPrecoMax) {
+        filtroRapidoPrecoMax.addEventListener('input', () => {
+          campoPrecoMax.value = filtroRapidoPrecoMax.value;
+          clearTimeout(timeoutFiltrosRapidos);
+          timeoutFiltrosRapidos = setTimeout(() => {
+            sistemaFiltros.aplicarFiltros();
+          }, 500);
+        });
+
+        campoPrecoMax.addEventListener('input', () => {
+          if (filtroRapidoPrecoMax.value !== campoPrecoMax.value) {
+            filtroRapidoPrecoMax.value = campoPrecoMax.value;
+          }
+        });
+      }
+
+      if (filtroRapidoQuartos && campoQuartos) {
+        filtroRapidoQuartos.addEventListener('change', () => {
+          campoQuartos.value = filtroRapidoQuartos.value;
+          sistemaFiltros.aplicarFiltros();
+        });
+
+        campoQuartos.addEventListener('change', () => {
+          if (filtroRapidoQuartos.value !== campoQuartos.value) {
+            filtroRapidoQuartos.value = campoQuartos.value;
+          }
+        });
+      }
+
       checkboxesBairros.forEach(checkbox => {
         checkbox.addEventListener('change', () => {
           atualizarTextoBairros();
+          atualizarFiltroRapidoBairros();
           // Aplica filtros automaticamente
           setTimeout(() => sistemaFiltros.aplicarFiltros(), 100);
         });
@@ -661,12 +833,20 @@
 
     // Menu mobile filtros
     const btnFiltrosMobile = document.querySelector('.botao-filtros-mobile');
+    const btnLimparMobile = document.querySelector('.botao-limpar-mobile');
     const sidebar = document.querySelector('.imoveis-sidebar');
+    const btnFecharFiltros = document.querySelector('.filtros__fechar-mobile');
     
     if (btnFiltrosMobile && sidebar) {
       btnFiltrosMobile.addEventListener('click', () => {
         sidebar.classList.toggle('aberto');
       });
+
+      if (btnFecharFiltros) {
+        btnFecharFiltros.addEventListener('click', () => {
+          sidebar.classList.remove('aberto');
+        });
+      }
 
       // Fecha ao clicar fora em dispositivos móveis
       document.addEventListener('click', (e) => {
@@ -676,6 +856,43 @@
             sidebar.classList.contains('aberto')) {
           sidebar.classList.remove('aberto');
         }
+      });
+    }
+
+    // Botão limpar filtros mobile
+    if (btnLimparMobile) {
+      btnLimparMobile.addEventListener('click', () => {
+        // Limpa filtros rápidos
+        const filtroPrecoMin = document.getElementById('filtro-rapido-preco-min');
+        const filtroPrecoMax = document.getElementById('filtro-rapido-preco-max');
+        const filtroQuartos = document.getElementById('filtro-rapido-quartos');
+        const filtroBairros = document.getElementById('filtro-rapido-bairros');
+        
+        if (filtroPrecoMin) filtroPrecoMin.value = '';
+        if (filtroPrecoMax) filtroPrecoMax.value = '';
+        if (filtroQuartos) filtroQuartos.value = '';
+        if (filtroBairros) filtroBairros.value = '';
+        
+        // Limpa formulário principal
+        const form = document.getElementById('form-filtros');
+        if (form) {
+          form.reset();
+          
+          // Desmarca todos os checkboxes de bairro
+          const checkboxesBairros = form.querySelectorAll('input[name="bairros"]');
+          checkboxesBairros.forEach(checkbox => {
+            checkbox.checked = false;
+          });
+          
+          // Atualiza o texto do resumo de bairros
+          const resumoBairros = document.getElementById('resumo-bairros');
+          if (resumoBairros) {
+            resumoBairros.textContent = 'Todos os bairros';
+          }
+        }
+        
+        // Reaplica filtros (mostrará todos os imóveis)
+        sistemaFiltros.aplicarFiltros();
       });
     }
   </script>

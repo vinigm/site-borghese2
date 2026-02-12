@@ -223,10 +223,7 @@ class SistemaFiltros {
   atualizarContador(quantidade) {
     const contador = document.querySelector('[data-contador-imoveis]');
     if (contador) {
-      contador.innerHTML = `
-        Encontramos <strong>${quantidade}</strong> 
-        ${quantidade === 1 ? 'imóvel' : 'imóveis'}
-      `;
+      contador.innerHTML = `<span>Encontramos <strong>${quantidade}</strong> ${quantidade === 1 ? 'imóvel' : 'imóveis'}</span>`;
     }
   }
 

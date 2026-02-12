@@ -25,6 +25,23 @@
   color: var(--cor-primaria);
 }
 
+.filtros__fechar-mobile {
+  margin-left: auto;
+  border: 1px solid var(--cor-borda);
+  background-color: var(--cor-fundo);
+  color: var(--cor-texto-secundario);
+  border-radius: var(--borda-radius-md);
+  padding: 6px 10px;
+  font-size: var(--texto-xs);
+  font-weight: var(--font-semibold);
+  cursor: pointer;
+}
+
+.filtros__fechar-mobile:hover {
+  border-color: var(--cor-primaria);
+  color: var(--cor-primaria);
+}
+
 /* === FORMULÁRIO === */
 .filtros__form {
   display: grid;
@@ -247,6 +264,10 @@
 @media (max-width: 768px) {
   .filtros {
     padding: var(--espacamento-lg);
+  }
+
+  .filtros__titulo {
+    margin-bottom: var(--espacamento-md);
   }
 
   .filtros__form {
