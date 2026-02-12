@@ -18,9 +18,11 @@
       },
       "caracteristicas": {
         "quartos": 2,
-        "banheiros": 2,
+        "banheiros": 3,
         "vagas": 2,
-        "area": 83
+        "area": 83,
+        "condominio": 780,
+        "iptu": 2000
       },
       "descricao": "Apartamento moderno com acabamento de primeira qualidade, localizado no coração do bairro Menino Deus. Próximo a comércios, restaurantes e transporte público.",
       "imagens": [

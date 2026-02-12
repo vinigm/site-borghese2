@@ -98,13 +98,23 @@ function criarBadges(imovel) {
 }
 
 function criarCaracteristicas(imovel) {
-  const { quartos, banheiros, vagas, area } = imovel.caracteristicas;
-  return `
+  const { quartos, banheiros, vagas, area, condominio, iptu } = imovel.caracteristicas;
+  let html = `
     <div class="detalhes-imovel__caracteristica"><strong>${quartos}</strong> quartos</div>
     <div class="detalhes-imovel__caracteristica"><strong>${banheiros}</strong> banheiros</div>
     <div class="detalhes-imovel__caracteristica"><strong>${vagas}</strong> vagas</div>
     <div class="detalhes-imovel__caracteristica"><strong>${area}m²</strong> area</div>
   `;
+  
+  if (condominio) {
+    html += `<div class="detalhes-imovel__caracteristica"><strong>R$ ${condominio.toLocaleString('pt-BR')}</strong> condomínio</div>`;
+  }
+  
+  if (iptu) {
+    html += `<div class="detalhes-imovel__caracteristica"><strong>R$ ${iptu.toLocaleString('pt-BR')}</strong> IPTU/ano</div>`;
+  }
+  
+  return html;
 }
 
 function configurarGaleria(imagens, titulo) {

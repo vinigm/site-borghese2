@@ -1,0 +1,28 @@
+Vamos adicionar mais um imóvel no nosso sistema
+
+As fotos do imóvel ja foram colocadas na pasta:
+
+
+As informações que precisamos adicionar do imovel são:
+
+ID: 
+EMPREENDIMENTO: 
+UNIDADE: 
+TITULO: 
+TRANSACAO (VENDA OU ALUGUEL): 
+PRECO: 
+RUA: 
+BAIRRO: 
+CIDADE: 
+ESTADO: 
+
+
+Caracteristicas:
+
+QUARTOS: 
+BANHEIROS: 
+VAGAS DE GARAGEM:
+AREA: 
+IPTU: 
+CONDOMINIO: 
+DESCRIÇÃO: 

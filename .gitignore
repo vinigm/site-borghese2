@@ -44,3 +44,23 @@ desktop.ini
 *.backup
 *.bak
 *~
+
+# Pastas vazias com problemas de permissão
+assets/images/imoveis/2/
+assets/images/imoveis/3/
+assets/images/imoveis/4/
+assets/images/imoveis/5/
+assets/images/imoveis/6/
+assets/images/imoveis/jonatan_eso/2/
+assets/images/imoveis/jonatan_eso/3/
+assets/images/imoveis/jonatan_eso/4/
+assets/images/imoveis/jonatan_eso/5/
+assets/images/imoveis/jonatan_eso/6/
+assets/images/imoveis/jonatan_eso/7/
+assets/images/imoveis/jonatan_eso/8/
+assets/images/imoveis/jonatan_eso/9/
+assets/images/imoveis/jonatan_eso/10/
+assets/images/imoveis/jonatan_eso/11/
+assets/images/imoveis/jonatan_eso/12/
+assets/images/imoveis/jonatan_eso/13/
+assets/images/imoveis/jonatan_eso/14/

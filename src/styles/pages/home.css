@@ -229,7 +229,7 @@
   top: var(--espacamento-md);
   left: var(--espacamento-md);
   padding: var(--espacamento-xs) var(--espacamento-sm);
-  background-color: var(--cor-secundaria);
+  background-color: rgba(37, 99, 235, 0.6);
   color: var(--cor-fundo);
   font-size: var(--texto-xs);
   font-weight: var(--font-semibold);
@@ -278,29 +278,25 @@
 }
 
 .card-empreendimento__footer {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  display: block;
   margin-top: auto;
   padding-top: var(--espacamento-md);
   border-top: 1px solid var(--cor-borda);
 }
 
-.card-empreendimento__info {
+.card-empreendimento__info-desktop {
   font-size: var(--texto-sm);
   color: var(--cor-texto-secundario);
   font-weight: var(--font-medium);
 }
 
-.card-empreendimento__cta {
-  font-size: var(--texto-sm);
-  color: var(--cor-primaria);
-  font-weight: var(--font-semibold);
-  transition: gap var(--transicao-rapida);
-}
-
-.card-empreendimento:hover .card-empreendimento__cta {
-  color: var(--cor-primaria-escura);
+.card-empreendimento__info-mobile {
+  display: none;
+  font-size: 11px;
+  color: var(--cor-texto-secundario);
+  font-weight: var(--font-medium);
+  line-height: 1.3;
+  margin-bottom: var(--espacamento-xs);
 }
 
 /* Oculta botões overlay mobile no desktop */
@@ -596,14 +592,21 @@
     background: var(--cor-primaria-hover);
   }
 
-  /* === BOTÕES OVERLAY MOBILE === */
-  /* Oculta footer dos cards no mobile */
-  .card-imovel__footer,
+  /* === MOBILE LAYOUT COMPACTO === */
   .card-empreendimento__footer {
-    display: none !important;
+    padding-top: var(--espacamento-sm);
   }
 
-  /* Botões de ação overlay nas imagens */
+  .card-empreendimento__info-desktop {
+    display: none;
+  }
+
+  .card-empreendimento__info-mobile {
+    display: block !important;
+  }
+
+  /* === BOTÕES OVERLAY MOBILE === */
+  /* Botões de ação overlay nas imagens (ainda mantemos WhatsApp/Contato) */
   .card-imovel__acoes-mobile,
   .card-empreendimento__acoes-mobile {
     display: flex !important;

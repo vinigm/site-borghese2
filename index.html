@@ -384,8 +384,14 @@
               </div>
               <p class="card-empreendimento__descricao">${emp.descricao}</p>
               <div class="card-empreendimento__footer">
-                <span class="card-empreendimento__info">${emp.caracteristicas?.unidades || 0} unidades</span>
-                <span class="card-empreendimento__cta">Ver detalhes →</span>
+                <div class="card-empreendimento__info-desktop">
+                  ${emp.caracteristicas?.unidades || 0} unidades • ${emp.caracteristicas?.torres || 1} ${emp.caracteristicas?.torres === 1 ? 'torre' : 'torres'} • ${emp.caracteristicas?.andares || 0} andares
+                </div>
+                <div class="card-empreendimento__info-mobile">
+                  ${emp.caracteristicas?.unidades ? `${emp.caracteristicas.unidades} unidades` : ''}
+                  ${emp.caracteristicas?.torres ? ` • ${emp.caracteristicas.torres} ${emp.caracteristicas.torres === 1 ? 'torre' : 'torres'}` : ''}
+                  ${emp.caracteristicas?.andares ? ` • ${emp.caracteristicas.andares} andares` : ''}
+                </div>
               </div>
             </div>
           </div>

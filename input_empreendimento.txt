@@ -1,0 +1,36 @@
+Vamos adicionar mais um empreendimento no nosso sistema
+
+As fotos do imóvel ja foram colocadas na pasta:
+
+
+As informações que precisamos adicionar do imovel são:
+
+ID: 
+NOME DO EMPREENDIMENTO: 
+RUA:
+BAIRRO:
+CIDADE:
+ESTADO:
+
+DESCRIÇÃO:
+
+
+DESCRIÇÃO COMPLETA:
+
+
+CARACTERISTICAS:
+TORRES: 
+ANDARES: 
+UNIDADES: 
+ELEVADORES: 
+STATUS: 
+
+
+AREAS DE LAZER:
+ACADEMIA: 
+CHURRASQUEIRA: 
+SALÃO DE FESTAS: 
+ESPAÇO GOURMET: 
+BRINQUEDOTECA: 
+SEGURANÇA 24H:
+PISCINA: 

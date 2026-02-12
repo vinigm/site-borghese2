@@ -175,6 +175,63 @@
   color: var(--cor-texto-secundario);
 }
 
+/* === BANNER CONTATO WHATSAPP === */
+.empreendimento__banner-contato {
+  background-color: var(--cor-fundo-alternativo);
+  border: 1px solid var(--cor-borda);
+  border-radius: var(--borda-radius-lg);
+  padding: var(--espacamento-md);
+}
+
+.banner-contato__conteudo {
+  display: flex;
+  flex-direction: column;
+  gap: var(--espacamento-sm);
+}
+
+.banner-contato__texto {
+  font-size: var(--texto-lg);
+  color: var(--cor-texto-principal);
+  font-weight: var(--font-medium);
+}
+
+.banner-contato__botao {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--espacamento-sm);
+  width: fit-content;
+  background-color: var(--cor-secundaria);
+  color: var(--cor-fundo);
+  font-size: var(--texto-base);
+  font-weight: var(--font-semibold);
+  text-decoration: none;
+  padding: 0.75rem 1rem;
+  border-radius: var(--borda-radius-md);
+  transition: background-color var(--transicao-rapida), transform var(--transicao-rapida);
+}
+
+.banner-contato__botao:hover {
+  background-color: var(--cor-secundaria-escura);
+  transform: translateY(-1px);
+}
+
+.banner-contato__botao svg {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+}
+
+@media (max-width: 640px) {
+  .banner-contato__texto {
+    font-size: var(--texto-base);
+  }
+
+  .banner-contato__botao {
+    width: 100%;
+  }
+}
+
 /* === CARACTERÍSTICAS === */
 .empreendimento__caracteristicas-gerais {
   display: grid;
