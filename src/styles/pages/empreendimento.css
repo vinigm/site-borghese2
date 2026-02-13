@@ -171,6 +171,31 @@
   flex-shrink: 0;
 }
 
+.empreendimento__pdf-link {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--espacamento-sm);
+  color: var(--cor-primaria);
+  font-size: var(--texto-base);
+  font-weight: var(--font-semibold);
+  text-decoration: none;
+  padding: var(--espacamento-sm) var(--espacamento-md);
+  background-color: rgba(37, 99, 235, 0.08);
+  border: 1px solid rgba(37, 99, 235, 0.2);
+  border-radius: var(--borda-radius-md);
+  transition: all var(--transicao-rapida);
+  margin-top: var(--espacamento-xs);
+}
+
+.empreendimento__pdf-link:hover {
+  background-color: rgba(37, 99, 235, 0.15);
+  border-color: var(--cor-primaria);
+}
+
+.empreendimento__pdf-link svg {
+  flex-shrink: 0;
+}
+
 .empreendimento__descricao {
   font-size: var(--texto-lg);
   line-height: 1.8;

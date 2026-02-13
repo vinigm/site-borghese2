@@ -45,6 +45,12 @@ desktop.ini
 *.bak
 *~
 
+# Credenciais e chaves de API
+keys_cloudnary.txt
+keys_cloudinary.txt
+*_keys.txt
+novos_imoveis_cloudinary.json
+
 # Pastas vazias com problemas de permissão
 assets/images/imoveis/2/
 assets/images/imoveis/4/

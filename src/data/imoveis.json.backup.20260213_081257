@@ -1,0 +1,269 @@
+{
+  "imoveis": [
+    {
+      "id": 1,
+      "empreendimentoId": 1,
+      "empreendimento": "Condomínio TOM",
+      "unidade": "804",
+      "torre": null,
+      "titulo": "Condomínio TOM - 2 Quartos",
+      "tipo": "apartamento",
+      "transacao": "venda",
+      "preco": 1150000,
+      "endereco": {
+        "rua": "Rua Almirante Gonçalves",
+        "bairro": "Menino Deus",
+        "cidade": "Porto Alegre",
+        "estado": "RS"
+      },
+      "caracteristicas": {
+        "quartos": 2,
+        "banheiros": 3,
+        "vagas": 2,
+        "area": 83,
+        "condominio": 780,
+        "iptu": 2000
+      },
+      "descricao": "Apartamento moderno com acabamento de primeira qualidade, localizado no coração do bairro Menino Deus. Próximo a comércios, restaurantes e transporte público.",
+      "imagens": [
+        "assets/images/imoveis/1/1.jpg",
+        "assets/images/imoveis/1/20251123_155500.jpg",
+        "assets/images/imoveis/1/20251123_155531.jpg",
+        "assets/images/imoveis/1/20251123_155540.jpg",
+        "assets/images/imoveis/1/20251123_155545.jpg",
+        "assets/images/imoveis/1/20251123_155557.jpg",
+        "assets/images/imoveis/1/20251123_155718.jpg",
+        "assets/images/imoveis/1/20251123_155725.jpg",
+        "assets/images/imoveis/1/20251123_155731.jpg",
+        "assets/images/imoveis/1/20251123_160647.jpg",
+        "assets/images/imoveis/1/20251123_160822.jpg",
+        "assets/images/imoveis/1/20251123_160851.jpg",
+        "assets/images/imoveis/1/20251123_160954.jpg",
+        "assets/images/imoveis/1/20251123_161242.jpg",
+        "assets/images/imoveis/1/20251123_161718.jpg",
+        "assets/images/imoveis/1/20251123_161732.jpg",
+        "assets/images/imoveis/1/20251123_161738.jpg",
+        "assets/images/imoveis/1/20251123_162041.jpg",
+        "assets/images/imoveis/1/20251123_162045.jpg",
+        "assets/images/imoveis/1/20251123_162052.jpg",
+        "assets/images/imoveis/1/20251123_162111.jpg",
+        "assets/images/imoveis/1/20251123_162132.jpg",
+        "assets/images/imoveis/1/academia1.jpeg",
+        "assets/images/imoveis/1/academia2.jpeg",
+        "assets/images/imoveis/1/piscina1.jpeg",
+        "assets/images/imoveis/1/piscina2.jpeg"
+      ],
+      "destaque": true,
+      "disponivel": true
+    },
+    {
+      "id": 7,
+      "empreendimentoId": null,
+      "empreendimento": null,
+      "unidade": null,
+      "torre": null,
+      "titulo": "Apartamento com 4 Quartos e 6 Banheiros - Mont'Serrat",
+      "tipo": "apartamento",
+      "transacao": "venda",
+      "preco": 4489900,
+      "endereco": {
+        "rua": "Rua Comendador Rheingantz, 696",
+        "bairro": "Mont Serrat",
+        "cidade": "Porto Alegre",
+        "estado": "RS"
+      },
+      "caracteristicas": {
+        "quartos": 4,
+        "banheiros": 6,
+        "vagas": 6,
+        "area": 373,
+        "suites": 4,
+        "aceitaAnimais": true,
+        "piscina": true,
+        "elevador": true,
+        "salaoFestas": true,
+        "jardim": true,
+        "hallPrivativo": true,
+        "deposito": true,
+        "churrasqueira": true,
+        "espacoGourmet": true,
+        "dependenciaEmpregada": true,
+        "closet": true,
+        "lareira": true,
+        "spa": true,
+        "fitness": true,
+        "portaria24h": true
+      },
+      "descricao": "Apartamento 1 por andar, hall privativo, 4 suítes transformadas em 3 amplas suítes, a master com banheiro e closet ele e ela, living para 4 ambientes com lareira, sala de jantar com espaço gourmet e churrasqueira, copa-cozinha, dependência completa de empregada. 4 vagas de garagem mais depósito. Edifício com infraestrutura, piscina adulto e infantil, salão de festas, spa, fitness e portaria 24h. No coração do bairro Bela Vista, próximo a Praça da Encol e ao GNU. Não deixe esta oportunidade escapar!",
+      "imagens": [
+        "assets/images/imoveis/jonatan_eso/1/1.jpg",
+        "assets/images/imoveis/jonatan_eso/1/ONE24639_002.jpg",
+        "assets/images/imoveis/jonatan_eso/1/ONE24639_004.jpg",
+        "assets/images/imoveis/jonatan_eso/1/ONE24639_005.jpg",
+        "assets/images/imoveis/jonatan_eso/1/ONE24639_013.jpg",
+        "assets/images/imoveis/jonatan_eso/1/ONE24639_016.jpg",
+        "assets/images/imoveis/jonatan_eso/1/ONE24639_017.jpg",
+        "assets/images/imoveis/jonatan_eso/1/ONE24639_018.jpg",
+        "assets/images/imoveis/jonatan_eso/1/ONE24639_022.jpg",
+        "assets/images/imoveis/jonatan_eso/1/ONE24639_023.jpg",
+        "assets/images/imoveis/jonatan_eso/1/ONE24639_024.jpg",
+        "assets/images/imoveis/jonatan_eso/1/ONE24639_025.jpg",
+        "assets/images/imoveis/jonatan_eso/1/ONE24639_026.jpg",
+        "assets/images/imoveis/jonatan_eso/1/ONE24639_030.jpg",
+        "assets/images/imoveis/jonatan_eso/1/ONE24639_031.jpg",
+        "assets/images/imoveis/jonatan_eso/1/ONE24639_032.jpg",
+        "assets/images/imoveis/jonatan_eso/1/ONE24639_034.jpg",
+        "assets/images/imoveis/jonatan_eso/1/ONE24639_037.jpg",
+        "assets/images/imoveis/jonatan_eso/1/ONE24639_040.jpg",
+        "assets/images/imoveis/jonatan_eso/1/ONE24639_042.jpg",
+        "assets/images/imoveis/jonatan_eso/1/ONE24639_045.jpg",
+        "assets/images/imoveis/jonatan_eso/1/ONE24639_048.jpg",
+        "assets/images/imoveis/jonatan_eso/1/ONE24639_051.jpg",
+        "assets/images/imoveis/jonatan_eso/1/ONE24639_054.jpg",
+        "assets/images/imoveis/jonatan_eso/1/ONE24639_058.jpg",
+        "assets/images/imoveis/jonatan_eso/1/ONE24639_063.jpg",
+        "assets/images/imoveis/jonatan_eso/1/ONE24639_064.jpg"
+      ],
+      "destaque": true,
+      "disponivel": true
+    },
+    {
+      "id": 34,
+      "empreendimentoId": null,
+      "empreendimento": "Edificio Silvana",
+      "unidade": "31",
+      "torre": null,
+      "titulo": "Apartamento 2D em Santa Cecília",
+      "tipo": "apartamento",
+      "transacao": "venda",
+      "preco": 340000,
+      "endereco": {
+        "rua": "Rua Jacinto Gomes, 119",
+        "bairro": "Santa Cecília",
+        "cidade": "Porto Alegre",
+        "estado": "RS"
+      },
+      "caracteristicas": {
+        "quartos": 2,
+        "banheiros": 2,
+        "vagas": 1,
+        "area": 80
+      },
+      "descricao": "Apartamento bem localizado em Santa Cecília, com ótima infraestrutura e fácil acesso ao centro da cidade.",
+      "imagens": [
+        "assets/images/imoveis/Apto ana gomes jacinto gomes/1.JPG",
+        "assets/images/imoveis/Apto ana gomes jacinto gomes/IMG_1381.JPG",
+        "assets/images/imoveis/Apto ana gomes jacinto gomes/IMG_1382.JPG",
+        "assets/images/imoveis/Apto ana gomes jacinto gomes/IMG_1383.JPG",
+        "assets/images/imoveis/Apto ana gomes jacinto gomes/IMG_1384.JPG",
+        "assets/images/imoveis/Apto ana gomes jacinto gomes/IMG_1385.JPG",
+        "assets/images/imoveis/Apto ana gomes jacinto gomes/IMG_1386.JPG",
+        "assets/images/imoveis/Apto ana gomes jacinto gomes/IMG_1388.JPG",
+        "assets/images/imoveis/Apto ana gomes jacinto gomes/IMG_1389.JPG",
+        "assets/images/imoveis/Apto ana gomes jacinto gomes/IMG_1390.JPG"
+      ],
+      "destaque": false,
+      "disponivel": true
+    },
+    {
+      "id": 52,
+      "empreendimentoId": null,
+      "empreendimento": "Edificio Dom Mauricio",
+      "unidade": "504",
+      "torre": null,
+      "titulo": "Oportunidade 1D no Centro",
+      "tipo": "apartamento",
+      "transacao": "venda",
+      "preco": 270000,
+      "endereco": {
+        "rua": "Rua Fernando Machado, 265",
+        "bairro": "Centro",
+        "cidade": "Porto Alegre",
+        "estado": "RS"
+      },
+      "caracteristicas": {
+        "quartos": 1,
+        "banheiros": 1,
+        "vagas": 0,
+        "area": 40,
+        "condominio": 476,
+        "iptu": 365
+      },
+      "descricao": "Excelente oportunidade de apartamento em ÓTIMAS condições no Centro! Localizado na parte calma da Fernando Machado, esse imóvel permite um acesso privilegiado tanto à Orla quanto ao centro comercial, possuí mercados em volta além de excelentes rotas para transporte público.",
+      "imagens": [
+        "assets/images/imoveis/Fernando machado/1.JPG",
+        "assets/images/imoveis/Fernando machado/IMG_1359.JPG",
+        "assets/images/imoveis/Fernando machado/IMG_1360.JPG",
+        "assets/images/imoveis/Fernando machado/IMG_1361.JPG",
+        "assets/images/imoveis/Fernando machado/IMG_1362.JPG",
+        "assets/images/imoveis/Fernando machado/IMG_1363.JPG",
+        "assets/images/imoveis/Fernando machado/IMG_1365.JPG",
+        "assets/images/imoveis/Fernando machado/IMG_1366.JPG",
+        "assets/images/imoveis/Fernando machado/IMG_1367.JPG",
+        "assets/images/imoveis/Fernando machado/IMG_1368.JPG",
+        "assets/images/imoveis/Fernando machado/IMG_1369.JPG",
+        "assets/images/imoveis/Fernando machado/IMG_1370.JPG",
+        "assets/images/imoveis/Fernando machado/IMG_1378.JPG",
+        "assets/images/imoveis/Fernando machado/IMG_1379.JPG"
+      ],
+      "destaque": true,
+      "disponivel": true
+    }
+  ],
+  "filtros": {
+    "tipos": [
+      "apartamento",
+      "casa",
+      "terreno",
+      "comercial"
+    ],
+    "transacoes": [
+      "venda",
+      "aluguel"
+    ],
+    "faixas_preco_venda": [
+      {
+        "label": "Até R$ 300.000",
+        "min": 0,
+        "max": 300000
+      },
+      {
+        "label": "R$ 300.000 - R$ 500.000",
+        "min": 300000,
+        "max": 500000
+      },
+      {
+        "label": "R$ 500.000 - R$ 800.000",
+        "min": 500000,
+        "max": 800000
+      },
+      {
+        "label": "Acima de R$ 800.000",
+        "min": 800000,
+        "max": 999999999
+      }
+    ],
+    "faixas_preco_aluguel": [
+      {
+        "label": "Até R$ 1.500",
+        "min": 0,
+        "max": 1500
+      },
+      {
+        "label": "R$ 1.500 - R$ 2.500",
+        "min": 1500,
+        "max": 2500
+      },
+      {
+        "label": "R$ 2.500 - R$ 4.000",
+        "min": 2500,
+        "max": 4000
+      },
+      {
+        "label": "Acima de R$ 4.000",
+        "min": 4000,
+        "max": 999999999
+      }
+    ]
+  }
+}

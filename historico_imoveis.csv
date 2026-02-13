@@ -1,0 +1,2 @@
+data_exclusao,id,titulo,tipo,transacao,preco,rua,bairro,cidade,estado,quartos,banheiros,vagas,area_m2,empreendimento,qtd_fotos,vendido,motivo
+2026-02-13 09:08,406,APTO Condominio Flagship,apartamento,venda,1250000,"Rua Cipó, 392",Jardim Europa,Porto Alegre,RS,2,2,1,102,Flagship,14,NAO,outro

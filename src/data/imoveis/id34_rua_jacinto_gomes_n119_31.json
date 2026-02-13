@@ -22,16 +22,16 @@
   },
   "descricao": "Apartamento bem localizado em Santa Cecília, com ótima infraestrutura e fácil acesso ao centro da cidade.",
   "imagens": [
-    "assets/images/imoveis/Apto ana gomes jacinto gomes/1.JPG",
-    "assets/images/imoveis/Apto ana gomes jacinto gomes/IMG_1381.JPG",
-    "assets/images/imoveis/Apto ana gomes jacinto gomes/IMG_1382.JPG",
-    "assets/images/imoveis/Apto ana gomes jacinto gomes/IMG_1383.JPG",
-    "assets/images/imoveis/Apto ana gomes jacinto gomes/IMG_1384.JPG",
-    "assets/images/imoveis/Apto ana gomes jacinto gomes/IMG_1385.JPG",
-    "assets/images/imoveis/Apto ana gomes jacinto gomes/IMG_1386.JPG",
-    "assets/images/imoveis/Apto ana gomes jacinto gomes/IMG_1388.JPG",
-    "assets/images/imoveis/Apto ana gomes jacinto gomes/IMG_1389.JPG",
-    "assets/images/imoveis/Apto ana gomes jacinto gomes/IMG_1390.JPG"
+    "https://res.cloudinary.com/demt8sxwk/image/upload/v1770980215/imoveis/Apto%20ana%20gomes%20jacinto%20gomes/1.jpg",
+    "https://res.cloudinary.com/demt8sxwk/image/upload/v1770980218/imoveis/Apto%20ana%20gomes%20jacinto%20gomes/IMG_1381.jpg",
+    "https://res.cloudinary.com/demt8sxwk/image/upload/v1770980218/imoveis/Apto%20ana%20gomes%20jacinto%20gomes/IMG_1382.jpg",
+    "https://res.cloudinary.com/demt8sxwk/image/upload/v1770980216/imoveis/Apto%20ana%20gomes%20jacinto%20gomes/IMG_1383.jpg",
+    "https://res.cloudinary.com/demt8sxwk/image/upload/v1770980221/imoveis/Apto%20ana%20gomes%20jacinto%20gomes/IMG_1384.jpg",
+    "https://res.cloudinary.com/demt8sxwk/image/upload/v1770980216/imoveis/Apto%20ana%20gomes%20jacinto%20gomes/IMG_1385.jpg",
+    "https://res.cloudinary.com/demt8sxwk/image/upload/v1770980217/imoveis/Apto%20ana%20gomes%20jacinto%20gomes/IMG_1386.jpg",
+    "https://res.cloudinary.com/demt8sxwk/image/upload/v1770980221/imoveis/Apto%20ana%20gomes%20jacinto%20gomes/IMG_1388.jpg",
+    "https://res.cloudinary.com/demt8sxwk/image/upload/v1770980219/imoveis/Apto%20ana%20gomes%20jacinto%20gomes/IMG_1389.jpg",
+    "https://res.cloudinary.com/demt8sxwk/image/upload/v1770980220/imoveis/Apto%20ana%20gomes%20jacinto%20gomes/IMG_1390.jpg"
   ],
   "destaque": false,
   "disponivel": true
