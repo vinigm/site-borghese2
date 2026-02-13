@@ -168,10 +168,12 @@ def coletar_dados_imovel(novo_id):
     # Extras (sim/não)
     print("\n   Extras (responda s ou n):")
     extras_mapa = {
-        "Aceita animais": "aceitaAnimais",
         "Piscina": "piscina",
         "Elevador": "elevador",
         "Churrasqueira": "churrasqueira",
+        "Bicicletário": "bicicletario",
+        "Salão de festas": "salaoFestas",
+        "Academia": "academia",
         "Portaria 24h": "portaria24h"
     }
     for pergunta, chave in extras_mapa.items():

@@ -1,0 +1,52 @@
+{
+  "id": 406,
+  "empreendimentoId": null,
+  "empreendimento": "Cine Teatro Presidente",
+  "unidade": "1102",
+  "torre": null,
+  "titulo": "Cine Teatro Presidente 11 Andar",
+  "tipo": "apartamento",
+  "transacao": "venda",
+  "preco": 479000,
+  "endereco": {
+    "rua": "Av. Benjamin Constant",
+    "bairro": "Floresta",
+    "cidade": "Porto Alegre",
+    "estado": "RS"
+  },
+  "caracteristicas": {
+    "quartos": 1,
+    "banheiros": 1,
+    "vagas": 1,
+    "area": 41,
+    "condominio": 600,
+    "aceitaAnimais": true,
+    "piscina": true,
+    "elevador": true,
+    "churrasqueira": true,
+    "portaria24h": true
+  },
+  "descricao": "Amplo apartamento de 1 dormitório, em andar alto, com 41m² de área privativa, sacada, churrasqueira e vaga de garagem. O imóvel dispõe de ótima área social, além de contar com excelente posição solar e boa ventilação.",
+  "imagens": [
+    "https://res.cloudinary.com/demt8sxwk/image/upload/v1770987658/imoveis/wikihaus_cineteatro/1.jpg",
+    "https://res.cloudinary.com/demt8sxwk/image/upload/v1770987659/imoveis/wikihaus_cineteatro/CINE_TEATRO_02.jpg",
+    "https://res.cloudinary.com/demt8sxwk/image/upload/v1770987660/imoveis/wikihaus_cineteatro/CINE_TEATRO_04.jpg",
+    "https://res.cloudinary.com/demt8sxwk/image/upload/v1770987661/imoveis/wikihaus_cineteatro/CINE_TEATRO_05.jpg",
+    "https://res.cloudinary.com/demt8sxwk/image/upload/v1770987661/imoveis/wikihaus_cineteatro/CINE_TEATRO_06.jpg",
+    "https://res.cloudinary.com/demt8sxwk/image/upload/v1770987662/imoveis/wikihaus_cineteatro/CINE_TEATRO_07.jpg",
+    "https://res.cloudinary.com/demt8sxwk/image/upload/v1770987663/imoveis/wikihaus_cineteatro/CINE_TEATRO_08.jpg",
+    "https://res.cloudinary.com/demt8sxwk/image/upload/v1770987664/imoveis/wikihaus_cineteatro/CINE_TEATRO_09.jpg",
+    "https://res.cloudinary.com/demt8sxwk/image/upload/v1770987665/imoveis/wikihaus_cineteatro/CINE_TEATRO_10.jpg",
+    "https://res.cloudinary.com/demt8sxwk/image/upload/v1770987667/imoveis/wikihaus_cineteatro/CINE_TEATRO_11.jpg",
+    "https://res.cloudinary.com/demt8sxwk/image/upload/v1770987670/imoveis/wikihaus_cineteatro/z.png",
+    "https://res.cloudinary.com/demt8sxwk/image/upload/v1770987977/imoveis/wikihaus_cineteatro/z1.webp",
+    "https://res.cloudinary.com/demt8sxwk/image/upload/v1770988142/imoveis/wikihaus_cineteatro/z2.webp",
+    "https://res.cloudinary.com/demt8sxwk/image/upload/v1770988143/imoveis/wikihaus_cineteatro/z3.webp",
+    "https://res.cloudinary.com/demt8sxwk/image/upload/v1770988144/imoveis/wikihaus_cineteatro/z4.webp",
+    "https://res.cloudinary.com/demt8sxwk/image/upload/v1770988145/imoveis/wikihaus_cineteatro/z5.webp",
+    "https://res.cloudinary.com/demt8sxwk/image/upload/v1770988145/imoveis/wikihaus_cineteatro/z6.webp",
+    "https://res.cloudinary.com/demt8sxwk/image/upload/v1770988278/imoveis/wikihaus_cineteatro/z120.webp"
+  ],
+  "destaque": true,
+  "disponivel": true
+}

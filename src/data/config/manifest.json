@@ -3,7 +3,9 @@
     "src/data/imoveis/id302_rua_almirante_goncalves_n0_804.json",
     "src/data/imoveis/id34_rua_jacinto_gomes_n119_31.json",
     "src/data/imoveis/id405_rua_comendador_rheingantz_n696.json",
-    "src/data/imoveis/id52_rua_fernando_machado_n265_504.json"
+    "src/data/imoveis/id52_rua_fernando_machado_n265_504.json",
+    "src/data/imoveis/id406_av_benjamin_constant_n0_1102.json",
+    "src/data/imoveis/id407_av_mariland_n0_306.json"
   ],
   "empreendimentos": [
     "src/data/empreendimentos/emp_artus_passo_dareia.json",
