@@ -65,6 +65,8 @@
   border-radius: var(--borda-radius-lg);
   overflow: hidden;
   box-shadow: var(--sombra-lg);
+  cursor: pointer;
+  position: relative;
 }
 
 .empreendimento__imagem-principal img {
@@ -355,4 +357,112 @@
 .empreendimento__sem-unidades p {
   color: var(--cor-texto-secundario);
   font-size: var(--texto-lg);
+}
+
+/* === LIGHTBOX === */
+.empreendimento__lightbox {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.75);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity var(--transicao-normal);
+  z-index: 1200;
+}
+
+.empreendimento__lightbox.ativo {
+  opacity: 1;
+  visibility: visible;
+}
+
+.empreendimento__lightbox-conteudo {
+  position: relative;
+  max-width: 90vw;
+  max-height: 90vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: min(92vw, 1100px);
+}
+
+.empreendimento__lightbox-imagem {
+  max-width: 80vw;
+  max-height: 80vh;
+  object-fit: contain;
+  background: #000;
+  border-radius: var(--borda-radius-md);
+  box-shadow: var(--sombra-lg);
+}
+
+.empreendimento__lightbox-fechar {
+  position: absolute;
+  top: -12px;
+  right: -12px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: none;
+  background: #ffffff;
+  color: #111827;
+  font-size: 1.5rem;
+  cursor: pointer;
+  box-shadow: var(--sombra-md);
+}
+
+.empreendimento__lightbox-seta {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(255, 255, 255, 0.95);
+  color: #111827;
+  font-size: 1.25rem;
+  cursor: pointer;
+  box-shadow: var(--sombra-md);
+  z-index: 3;
+}
+
+.empreendimento__lightbox-seta--esq {
+  left: 12px;
+}
+
+.empreendimento__lightbox-seta--dir {
+  right: 12px;
+}
+
+.empreendimento__lightbox-seta:hover,
+.empreendimento__lightbox-fechar:hover {
+  background: #ffffff;
+}
+
+@media (max-width: 768px) {
+  .empreendimento__lightbox-conteudo {
+    width: 94vw;
+  }
+
+  .empreendimento__lightbox-imagem {
+    max-width: 94vw;
+    max-height: 70vh;
+  }
+
+  .empreendimento__lightbox-seta {
+    width: 42px;
+    height: 42px;
+    background: rgba(255, 255, 255, 0.98);
+  }
+
+  .empreendimento__lightbox-seta--esq {
+    left: 6px;
+  }
+
+  .empreendimento__lightbox-seta--dir {
+    right: 6px;
+  }
+}
 }
